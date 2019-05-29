@@ -18,18 +18,6 @@ urlpatterns = [
     path('bagjewel/', views.bagjewel, name='bagjewel'),
     path('shoeswomen/', views.shoeswomen, name='shoeswomen'),
 
-    # Boys routes
-    path('boys/', views.boys, name='boys'),
-    # path('boys/', views.boys, name='boys'),
-    # path('boys/', views.boys, name='boys'),
-    # path('boys/', views.boys, name='boys'),
-
-    # Girls routes
-    path('girls/', views.girls, name='girls'),
-    # path('girls/', views.girls, name='girls'),
-    # path('girls/', views.girls, name='girls'),
-    # path('girls/', views.girls, name='girls'),
-
     # Cart
     path('shoppingCart/', views.shoppingCart, name='shoppingCart'),
 ]

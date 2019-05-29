@@ -43,12 +43,6 @@ def bagjewel(request):
 def shoeswomen(request):
     return render(request, 'ivoryApp/shoesWomen.html')
 #################################################################################
-def boys(request):
-    return render(request, 'ivoryApp/boys.html')
-
-
-def girls(request):
-    return render(request, 'ivoryApp/girls.html')
 
 
 def shoppingCart(request):
