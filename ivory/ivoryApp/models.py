@@ -6,6 +6,7 @@ class UserLoginModel(models.Model):
     username = models.CharField(max_length=200)
     email = models.EmailField()
     password = models.CharField(max_length=200)
+    profilePic = models.ImageField(upload_to="media/images/", null=True, blank=True)
     userForeignKey = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
@@ -59,6 +60,7 @@ class ShoesMen(models.Model):
 
     def __str__(self):
         return self.sm_title
+
 
 ###############################################
 # MODELS FOR WOMEN
