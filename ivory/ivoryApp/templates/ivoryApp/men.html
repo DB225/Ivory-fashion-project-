@@ -1,13 +1,57 @@
-{% extends 'ivoryApp/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+{% block header %}
+<h1>YVORY</h1>
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'index' %}">HOME</a>
+        </li>
+        <li>
+            <a href="{% url 'men' %}">MEN</a>
+        </li>
+        <li>
+            <a href="{% url 'women' %}">WOMEN</a>
+        </li>
+        <li>
+            <a href="{% url 'boys' %}">BOYS</a>
+        </li>
+        <li>
+            <a href="{% url 'girls' %}">GIRLS</a>
+        </li>
+        <li>
+            <a href="{% url 'shoppingCart' %}">CART</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+<h4>MEN'S COLLECTION</h4>
+<ul>
+    <li>
+        <a href="{% url 'tshirtmen' %}">T-Shirt</a>
+    </li>
+    <li>
+        <a href="{% url 'shirtmen' %}">Shirt</a>
+    </li>
+    <li>
+        <a href="{% url 'pantsmen' %}">Pants</a>
+    </li>
+    <li>
+        <a href="{% url 'shoesmen' %}">Shoes</a>
+    </li>
+</ul>
 
 {% block content %}
-<h1>Men's wear</h1>
-<p>men's content.</p>
-<p>men's content.</p>
-<p>men's content.</p>
-<p>men's content.</p>
-<p>men's content.</p>
-<p>men's content.</p>
-<p>men's content.</p>
-<p>men's content.</p>
+
 {% endblock %}
+
+{% block footer %}
+<h1>I'm the footer</h1>
+{% endblock %}
+</body>
+</html>
