@@ -18,7 +18,7 @@ def newdesigner(request):
         User.objects.create_user(request.POST["username"], request.POST['email'], request.POST["password"],
                                  request.POST["profilePic"])
         return redirect("index")
-    return render(request, 'ivoryApp/newdesigner.html')
+    return render(request, 'ivoryApp/newdesigner.html', {'newprofile': newprofile})
 
 
 # MEN FUNCTIONS
@@ -39,8 +39,18 @@ def newtshirt(request):
 
     if request.method == 'POST' or new_ts.is_valid():
         new_ts = TshirtForm(request.POST, request.FILES)
+        loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
+        Tshirt.objects.create(ts_title=request.POST["ts_title"], ts_size=request.POST["ts_size"],
+                              ts_picture=request.FILES["ts_picture"], ts_price=request.POST["ts_price"],
+                              ts_ForeignKey=loggedInUser)
 
-    return render(request, 'ivoryApp/newTshirt.html')
+        return redirect('tShirtMen')
+    else:
+        print(new_ts.errors)
+        print(new_ts.non_field_errors)
+        new_ts = TshirtForm()
+
+    return render(request, 'ivoryApp/newTshirt.html', {'new_ts': new_ts})
 
 
 # read tShirt
@@ -62,12 +72,28 @@ def deletetshirt(request):
 
 # Shirt
 def shirtmen(request):
-    return render(request, 'ivoryApp/shirtMen.html')
+    allShirts = Shirt.objects.all()
+    return render(request, 'ivoryApp/shirtMen.html', {'allShirts': allShirts})
 
 
 # new shirt
 def newshirt(request):
-    return render(request, 'ivoryApp/newShirt.html')
+    new_shirt = TshirtForm(request.POST or None)
+    print(request.POST)
+
+    if request.method == 'POST' or new_shirt.is_valid():
+        new_shirt = ShirtForm(request.POST, request.FILES)
+        loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
+        Shirt.objects.create(s_title=request.POST["s_title"], s_size=request.POST["s_size"],
+                             s_picture=request.FILES["s_picture"], s_price=request.POST["s_price"],
+                             s_ForeignKey=loggedInUser)
+
+        return redirect('shirtMen')
+    else:
+        print(new_shirt.errors)
+        print(new_shirt.non_field_errors)
+        new_shirt = ShirtForm()
+    return render(request, 'ivoryApp/newShirt.html', {'new_shirt': new_shirt})
 
 
 # read shirt
@@ -89,12 +115,28 @@ def deleteshirt(request):
 
 # Pants
 def pantsmen(request):
-    return render(request, 'ivoryApp/pantsMen.html')
+    allPants = Pants.objects.all()
+    return render(request, 'ivoryApp/pantsMen.html', {'allPants': allPants})
 
 
 # new pants
 def newpants(request):
-    return render(request, 'ivoryApp/newpants.html')
+    new_pant = TshirtForm(request.POST or None)
+    print(request.POST)
+
+    if request.method == 'POST' or new_pant.is_valid():
+        new_pant = PantsForm(request.POST, request.FILES)
+        loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
+        Shirt.objects.create(pant_title=request.POST["s_title"], pant_size=request.POST["s_size"],
+                             pant_picture=request.FILES["s_picture"], pant_price=request.POST["s_price"],
+                             pant_ForeignKey=loggedInUser)
+
+        return redirect('shirtMen')
+    else:
+        print(new_pant.errors)
+        print(new_pant.non_field_errors)
+        new_pant = PantsForm()
+    return render(request, 'ivoryApp/newpants.html', {'new_pant': new_pant})
 
 
 # read pants

@@ -2,11 +2,13 @@
 
 {% block content %}
 <h2>Shirt</h2>
-<p>Men's content shirt</p>
-<p>Men's content shirt</p>
-<p>Men's content shirt</p>
-<p>Men's content shirt</p>
-<p>Men's content shirt</p>
-<p>Men's content shirt</p>
-<p>Men's content shirt</p>
+<a href="{% url 'newshirt' %}">Add Shirt</a>
+{% if allShirts %}
+{% for eachSh in allShirts %}
+{{ eachSh.s_title }}
+{{ eachSh.s_picture }}
+{{ eachSh.s_size }}
+{{ eachSh.s_price }}
+{% endfor %}
+{% endif %}
 {% endblock %}

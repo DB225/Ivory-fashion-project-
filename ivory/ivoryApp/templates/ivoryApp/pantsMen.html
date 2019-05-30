@@ -2,9 +2,13 @@
 
 {% block content %}
 <h2>Pants</h2>
-<p>Men's content pants</p>
-<p>Men's content pants</p>
-<p>Men's content pants</p>
-<p>Men's content pants</p>
-<p>Men's content pants</p>
+<a href="{% url 'newpants' %}">Add Pant</a>
+{% if allPants %}
+{% for eachPant in allPants %}
+{{ eachPant.pant_title }}
+{{ eachPant.pant_picture }}
+{{ eachPant.pant_size }}
+{{ eachPant.pant_price }}
+{% endfor %}
+{% endif %}
 {% endblock %}

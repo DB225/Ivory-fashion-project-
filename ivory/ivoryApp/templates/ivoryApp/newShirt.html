@@ -2,7 +2,11 @@
 
 {% block content %}
 <h2>New Shirt</h2>
-<p>FORM</p>
-<p>content new shirt men</p>
-<p>content new shirt men</p>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ new_shirt.as_p }}
+    <button>CREATE</button>
+</form>
+<br>
+<a href="{% url 'shirtmen' %}">BACK</a>
 {% endblock %}

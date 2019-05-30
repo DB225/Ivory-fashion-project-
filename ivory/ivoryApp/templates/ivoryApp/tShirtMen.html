@@ -2,11 +2,13 @@
 
 {% block content %}
 <h2>T-Shirt</h2>
+<a href="{% url 'newtshirt' %}">Add T-Shirt</a>
 {% if allTshirts %}
 {% for eachTsh in allTshirts %}
 {{ eachTsh.ts_title }}
 {{ eachTsh.ts_picture }}
 {{ eachTsh.ts_size }}
+{{ eachTsh.ts_price }}
 {% endfor %}
 {% endif %}
 {% endblock %}
