@@ -7,22 +7,26 @@ urlpatterns = [
     # Main page
     path('', views.index, name='index'),
 
+    # New designer
+    path('newdesigner/', views.newdesigner, name='newdesigner'),
+
+
     # ROUTES FOR MEN
     path('men/', views.men, name='men'),
 
     # T-shirt
-    path('tshirtmen', views.tshirtmen, name='tshirtmen'),
-    path('newtshirt', views.newtshirt, name='newtshirt'),
-    path('readtshirt', views.readtshirt, name='readtshirt'),
-    path('edittshirt', views.edittshirt, name='edittshirt'),
-    path('deletetshirt', views.deletetshirt, name='deletetshirt'),
+    path('tshirtmen/', views.tshirtmen, name='tshirtmen'),
+    path('newtshirt/', views.newtshirt, name='newtshirt'),
+    path('readtshirt/', views.readtshirt, name='readtshirt'),
+    path('edittshirt/', views.edittshirt, name='edittshirt'),
+    path('deletetshirt/', views.deletetshirt, name='deletetshirt'),
 
     # Shirt
-    path('shirtmen', views.shirtmen, name='shirtmen'),
-    path('newshirt', views.newshirt, name='newshirt'),
-    path('readshirt', views.readshirt, name='readshirt'),
-    path('editshirt', views.editshirt, name='editshirt'),
-    path('deleteshirt', views.deleteshirt, name='deleteshirt'),
+    path('shirtmen/', views.shirtmen, name='shirtmen'),
+    path('newshirt/', views.newshirt, name='newshirt'),
+    path('readshirt/', views.readshirt, name='readshirt'),
+    path('editshirt/', views.editshirt, name='editshirt'),
+    path('deleteshirt/', views.deleteshirt, name='deleteshirt'),
 
     # Pants
     path('pantsmen/', views.pantsmen, name='pantsmen'),

@@ -1,9 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import *
+from django.contrib.auth.models import User
 
 
 # Create your views here.
 def index(request):
     return render(request, 'ivoryApp/index.html')
+
+
+# New Designer
+def newdesigner(request):
+    newprofile = UserLoginForm(request.POST or None)
+    print(request.POST)
+    if request.method == 'POST' and newprofile.is_valid():
+        UserLoginModel.objects.create(username=request.POST["username"], email=request.POST['email'],
+                                      password=request.POST["password"], profilePic=request.POST["profilePic"])
+        User.objects.create_user(request.POST["username"], request.POST['email'], request.POST["password"],
+                                 request.POST["profilePic"])
+        return redirect("index")
+    return render(request, 'ivoryApp/newdesigner.html')
 
 
 # MEN FUNCTIONS
@@ -13,11 +28,18 @@ def men(request):
 
 # T-Shirt
 def tshirtmen(request):
-    return render(request, 'ivoryApp/tShirtMen.html')
+    allTshirts = Tshirt.objects.all()
+    return render(request, 'ivoryApp/tShirtMen.html', {'allTshirts': allTshirts})
 
 
 # new tShirt
 def newtshirt(request):
+    new_ts = TshirtForm(request.POST or None)
+    print(request.POST)
+
+    if request.method == 'POST' or new_ts.is_valid():
+        new_ts = TshirtForm(request.POST, request.FILES)
+
     return render(request, 'ivoryApp/newTshirt.html')
 
 
