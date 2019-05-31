@@ -1,0 +1,14 @@
+{% extends 'ivoryApp/women.html' %}
+
+{% block content %}
+<h2>Shoes Women</h2>
+<a href="{% url 'newshoeswomen' %}">Add Shoes</a>
+{% if allShoesWomen %}
+{% for eachsw in allShoesWomen %}
+{{ eachsw.sw_title }}
+{{ eachsw.sw_picture }}
+{{ eachsw.sw_size }}
+{{ eachsw.sw_price }}
+{% endfor %}
+{% endif %}
+{% endblock %}

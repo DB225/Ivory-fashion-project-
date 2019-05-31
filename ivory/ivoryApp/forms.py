@@ -9,6 +9,20 @@ CUSTOMER_SIZE = (
     ("xxl", "XXL"),
 )
 
+CUSTOMER_SIZE_SHOES = (
+    ("9", "9"),
+    ("10", "10"),
+    ("11", "11"),
+    ("12", "12"),
+    ("13", "13"),
+)
+
+
+CUSTOMER_SIZE_ACCESSORY = (
+    ("s", "S"),
+    ("m", "M"),
+)
+
 
 class UserLoginForm(forms.ModelForm):
     class Meta:
@@ -81,7 +95,7 @@ class ShoesMenForm(forms.ModelForm):
             'sm_price': 'Price (USD)',
         }
         widgets = {
-            'sm_size': forms.Select(choices=CUSTOMER_SIZE)
+            'sm_size': forms.Select(choices=CUSTOMER_SIZE_SHOES)
         }
 
 
@@ -111,7 +125,7 @@ class BagJewelForm(forms.ModelForm):
             'bj_price': 'Price (USD)',
         }
         widgets = {
-            'bj_size': forms.Select(choices=CUSTOMER_SIZE)
+            'bj_size': forms.Select(choices=CUSTOMER_SIZE_ACCESSORY)
         }
 
 
@@ -126,5 +140,5 @@ class ShoesWomenForm(forms.ModelForm):
             'sw_price': 'Price (USD)',
         }
         widgets = {
-            'sw_size': forms.Select(choices=CUSTOMER_SIZE)
+            'sw_size': forms.Select(choices=CUSTOMER_SIZE_SHOES)
         }

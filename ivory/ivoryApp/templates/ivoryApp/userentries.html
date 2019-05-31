@@ -1,0 +1,18 @@
+{% extends 'ivoryApp/base.html' %}
+
+{% block content %}
+<h4>My Items</h4>
+{% if user.is_authenticated %}
+    {% for eachTsh in personalTshirts %}
+        <a href="{% url 'readTshirt' eachTsh.id %}">
+            <img src="{{ eachTsh.ts_picture.url }}" alt="image item">
+        </a>
+            <h5>{{ eachTsh.ts_title }}</h5>
+            <h5>{{ eachTsh.ts_price }}</h5>
+            <a href="{% url 'editTshirt' eachTsh.id %}">Edit</a>
+            <a href="{% url 'deleteTshirt' eachTsh.id %}">Delete</a> <br> <br>
+    {% endfor %}
+{% else %}
+<h1>No Post Available</h1>
+{% endif%}
+{% endblock %}

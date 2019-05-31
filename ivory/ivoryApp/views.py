@@ -21,6 +21,34 @@ def newdesigner(request):
     return render(request, 'ivoryApp/newdesigner.html', {'newprofile': newprofile})
 
 
+# Entries of the logged in user
+def userEntries(request):
+    if request.user.is_authenticated:
+        # This puts the logged in user entry into the variable userLoggedIn
+        userLoggedIn = UserLoginModel.objects.get(username=request.user)
+        # This will grab all of the entries for the logged in user
+        personalTshirts = Tshirt.objects.filter(ts_ForeignKey=userLoggedIn)
+        personalShirts = Shirt.objects.filter(s_ForeignKey=userLoggedIn)
+        personalPants = Pants.objects.filter(pant_ForeignKey=userLoggedIn)
+        personalShoesMen = ShoesMen.objects.filter(sm_ForeignKey=userLoggedIn)
+        personalDresses = Dress.objects.filter(dress_ForeignKey=userLoggedIn)
+        personalAccessories = BagJewel.objects.filter(bj_ForeignKey=userLoggedIn)
+        personalShoesWomen = ShoesWomen.objects.filter(sw_ForeignKey=userLoggedIn)
+
+        context = {
+            'personalTshirts': personalTshirts,
+            'personalShirts': personalShirts,
+            'personalPants': personalPants,
+            'personalShoesMen': personalShoesMen,
+            'personalDresses': personalDresses,
+            'personalAccessories': personalAccessories,
+            'personalShoesWomen': personalShoesWomen,
+        }
+        return render(request, 'ivoryApp/userentries.html', context)
+    else:
+        return render(request, 'ivoryApp/userentries.html')
+
+
 # MEN FUNCTIONS
 def men(request):
     return render(request, 'ivoryApp/men.html')
@@ -29,7 +57,7 @@ def men(request):
 # T-Shirt
 def tshirtmen(request):
     allTshirts = Tshirt.objects.all()
-    return render(request, 'ivoryApp/tShirtMen.html', {'allTshirts': allTshirts})
+    return render(request, 'ivoryApp/item/tShirtMen.html', {'allTshirts': allTshirts})
 
 
 # new tShirt
@@ -50,22 +78,22 @@ def newtshirt(request):
         print(new_ts.non_field_errors)
         new_ts = TshirtForm()
 
-    return render(request, 'ivoryApp/newTshirt.html', {'new_ts': new_ts})
+    return render(request, 'ivoryApp/newitem/newTshirt.html', {'new_ts': new_ts})
 
 
 # read tShirt
 def readtshirt(request):
-    return render(request, 'ivoryApp/readTshirt.html')
+    return render(request, 'ivoryApp/readitem/readTshirt.html')
 
 
 # edit tShirt
 def edittshirt(request):
-    return render(request, 'ivoryApp/editTshirt.html')
+    return render(request, 'ivoryApp/edititem/editTshirt.html')
 
 
 # delete tShirt
 def deletetshirt(request):
-    return render(request, 'ivoryApp/deleteTshirt.html')
+    return render(request, 'ivoryApp/deleteitem/deleteTshirt.html')
 
 ############################################
 
@@ -73,12 +101,12 @@ def deletetshirt(request):
 # Shirt
 def shirtmen(request):
     allShirts = Shirt.objects.all()
-    return render(request, 'ivoryApp/shirtMen.html', {'allShirts': allShirts})
+    return render(request, 'ivoryApp/item/shirtMen.html', {'allShirts': allShirts})
 
 
 # new shirt
 def newshirt(request):
-    new_shirt = TshirtForm(request.POST or None)
+    new_shirt = ShirtForm(request.POST or None)
     print(request.POST)
 
     if request.method == 'POST' or new_shirt.is_valid():
@@ -93,22 +121,22 @@ def newshirt(request):
         print(new_shirt.errors)
         print(new_shirt.non_field_errors)
         new_shirt = ShirtForm()
-    return render(request, 'ivoryApp/newShirt.html', {'new_shirt': new_shirt})
+    return render(request, 'ivoryApp/newitem/newShirt.html', {'new_shirt': new_shirt})
 
 
 # read shirt
 def readshirt(request):
-    return render(request, 'ivoryApp/readShirt.html')
+    return render(request, 'ivoryApp/readitem/readShirt.html')
 
 
 # edit shirt
 def editshirt(request):
-    return render(request, 'ivoryApp/editShirt.html')
+    return render(request, 'ivoryApp/edititem/editShirt.html')
 
 
 # delete shirt
 def deleteshirt(request):
-    return render(request, 'ivoryApp/deleteShirt.html')
+    return render(request, 'ivoryApp/deleteitem/deleteShirt.html')
 
 ############################################
 
@@ -116,7 +144,7 @@ def deleteshirt(request):
 # Pants
 def pantsmen(request):
     allPants = Pants.objects.all()
-    return render(request, 'ivoryApp/pantsMen.html', {'allPants': allPants})
+    return render(request, 'ivoryApp/item/pantsMen.html', {'allPants': allPants})
 
 
 # new pants
@@ -127,58 +155,74 @@ def newpants(request):
     if request.method == 'POST' or new_pant.is_valid():
         new_pant = PantsForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        Shirt.objects.create(pant_title=request.POST["s_title"], pant_size=request.POST["s_size"],
-                             pant_picture=request.FILES["s_picture"], pant_price=request.POST["s_price"],
+        Pants.objects.create(pant_title=request.POST["pant_title"], pant_size=request.POST["pant_size"],
+                             pant_picture=request.FILES["pant_picture"], pant_price=request.POST["pant_price"],
                              pant_ForeignKey=loggedInUser)
 
-        return redirect('shirtMen')
+        return redirect('pantsMen')
     else:
         print(new_pant.errors)
         print(new_pant.non_field_errors)
         new_pant = PantsForm()
-    return render(request, 'ivoryApp/newpants.html', {'new_pant': new_pant})
+    return render(request, 'ivoryApp/newitem/newpants.html', {'new_pant': new_pant})
 
 
 # read pants
 def readpants(request):
-    return render(request, 'ivoryApp/readpants.html')
+    return render(request, 'ivoryApp/readitem/readpants.html')
 
 
 # edit pants
 def editpants(request):
-    return render(request, 'ivoryApp/editpants.html')
+    return render(request, 'ivoryApp/edititem/editpants.html')
 
 
 # delete pants
 def deletepants(request):
-    return render(request, 'ivoryApp/deletepants.html')
+    return render(request, 'ivoryApp/deleteitem/deletepants.html')
 
 ############################################
 
 
 # Shoes
 def shoesmen(request):
-    return render(request, 'ivoryApp/shoesMen.html')
+    allShoesMen = ShoesMen.objects.all()
+    return render(request, 'ivoryApp/item/shoesMen.html', {'allShoesMen': allShoesMen})
 
 
 # new men shoes
 def newshoesmen(request):
-    return render(request, 'ivoryApp/newshoesmen.html')
+    new_sm = ShoesMenForm(request.POST or None)
+    print(request.POST)
+
+    if request.method == 'POST' or new_sm.is_valid():
+        new_sm = ShoesMenForm(request.POST, request.FILES)
+        loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
+        ShoesMen.objects.create(sm_title=request.POST["sm_title"], sm_size=request.POST["sm_size"],
+                                sm_picture=request.FILES["sm_picture"], sm_price=request.POST["sm_price"],
+                                sm_ForeignKey=loggedInUser)
+
+        return redirect('ShoesMen')
+    else:
+        print(new_sm.errors)
+        print(new_sm.non_field_errors)
+        new_sm = ShoesMenForm()
+    return render(request, 'ivoryApp/newitem/newshoesmen.html', {'new_sm': new_sm})
 
 
 # read men shoes
 def readshoesmen(request):
-    return render(request, 'ivoryApp/readshoesmen.html')
+    return render(request, 'ivoryApp/readitem/readshoesmen.html')
 
 
 # edit men shoes
 def editshoesmen(request):
-    return render(request, 'ivoryApp/editshoesmen.html')
+    return render(request, 'ivoryApp/edititem/editshoesmen.html')
 
 
 # delete men shoes
 def deleteshoesmen(request):
-    return render(request, 'ivoryApp/deleteshoesmen.html')
+    return render(request, 'ivoryApp/deleteitem/deleteshoesmen.html')
 
 ####################################################################################
 ####################################################################################
@@ -192,81 +236,129 @@ def women(request):
 
 # Dress
 def dress(request):
-    return render(request, 'ivoryApp/dress.html')
+    allDresses = Dress.objects.all()
+    return render(request, 'ivoryApp/item/dress.html', {'allDresses': allDresses})
 
 
 # new dress
 def newdress(request):
-    return render(request, 'ivoryApp/newdress.html')
+    new_dress = DressForm(request.POST or None)
+    print(request.POST)
+
+    if request.method == 'POST' or new_dress.is_valid():
+        new_dress = ShoesMenForm(request.POST, request.FILES)
+        loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
+        Dress.objects.create(dress_title=request.POST["dress_title"], dress_size=request.POST["dress_size"],
+                             dress_picture=request.FILES["dress_picture"], dress_price=request.POST["dress_price"],
+                             dress_ForeignKey=loggedInUser)
+
+        return redirect('dress')
+    else:
+        print(new_dress.errors)
+        print(new_dress.non_field_errors)
+        new_dress = DressForm()
+    return render(request, 'ivoryApp/newitem/newdress.html', {'new_dress': new_dress})
 
 
 # read dress
 def readdress(request):
-    return render(request, 'ivoryApp/readdress.html')
+    return render(request, 'ivoryApp/readitem/readdress.html')
 
 
 # edit dress
 def editdress(request):
-    return render(request, 'ivoryApp/editdress.html')
+    return render(request, 'ivoryApp/edititem/editdress.html')
 
 
 # delete dress
 def deletedress(request):
-    return render(request, 'ivoryApp/deletedress.html')
+    return render(request, 'ivoryApp/deleteitem/deletedress.html')
 
 ############################################
 
 
 # Bag & Jewelry
 def bagjewel(request):
-    return render(request, 'ivoryApp/bagjewel.html')
+    allAccessories = BagJewel.objects.all()
+    return render(request, 'ivoryApp/item/bagjewel.html', {'allAccessories': allAccessories})
 
 
 # new accessory
 def newbagjewel(request):
-    return render(request, 'ivoryApp/newbagjewel.html')
+    new_bj = BagJewelForm(request.POST or None)
+    print(request.POST)
+
+    if request.method == 'POST' or new_bj.is_valid():
+        new_bj = BagJewelForm(request.POST, request.FILES)
+        loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
+        BagJewelForm.objects.create(bj_title=request.POST["bj_title"], bj_size=request.POST["bj_size"],
+                                    bj_picture=request.FILES["bj_picture"], bj_price=request.POST["bj_price"],
+                                    bj_ForeignKey=loggedInUser)
+
+        return redirect('bagjewel')
+    else:
+        print(new_bj.errors)
+        print(new_bj.non_field_errors)
+        new_bj = BagJewelForm()
+    return render(request, 'ivoryApp/newitem/newbagjewel.html', {'new_bj': new_bj})
 
 
 # read accessory
 def readbagjewel(request):
-    return render(request, 'ivoryApp/readbagjewel.html')
+    return render(request, 'ivoryApp/readitem/readbagjewel.html')
 
 
 # edit accessory
 def editbagjewel(request):
-    return render(request, 'ivoryApp/editbagjewel.html')
+    return render(request, 'ivoryApp/edititem/editbagjewel.html')
 
 
 # delete accessory
 def deletebagjewel(request):
-    return render(request, 'ivoryApp/deletebagjewel.html')
+    return render(request, 'ivoryApp/deleteitem/deletebagjewel.html')
 
 ############################################
 
 
 # Shoes
 def shoeswomen(request):
-    return render(request, 'ivoryApp/shoesWomen.html')
+    allShoesWomen = ShoesWomen.objects.all()
+    return render(request, 'ivoryApp/item/shoesWomen.html', {'allShoesWomen': allShoesWomen})
 
 
 # new women shoes
 def newshoeswomen(request):
-    return render(request, 'ivoryApp/newshoeswomen.html')
+    new_sw = ShoesWomenForm(request.POST or None)
+    print(request.POST)
+
+    if request.method == 'POST' or new_sw.is_valid():
+        new_sw = ShoesWomenForm(request.POST, request.FILES)
+        loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
+        ShoesWomen.objects.create(sw_title=request.POST["sw_title"], sw_size=request.POST["sw_size"],
+                                  sw_picture=request.FILES["sw_picture"], sw_price=request.POST["sw_price"],
+                                  sw_ForeignKey=loggedInUser)
+
+        return redirect('shoesWomen')
+    else:
+        print(new_sw.errors)
+        print(new_sw.non_field_errors)
+        new_sw = ShoesWomenForm()
+    return render(request, 'ivoryApp/newitem/newshoeswomen.html', {'new_sw': new_sw})
 
 
 # read women shoes
 def readshoeswomen(request):
-    return render(request, 'ivoryApp/readshoeswomen.html')
+    return render(request, 'ivoryApp/readitem/readshoeswomen.html')
 
 
 # edit women shoes
 def editshoeswomen(request):
-    return render(request, 'ivoryApp/editshoeswomen.html')
+    return render(request, 'ivoryApp/edititem/editshoeswomen.html')
 
 
 # delete women shoes
 def deleteshoeswomen(request):
-    return render(request, 'ivoryApp/deleteshoeswomen.html')
+    return render(request, 'ivoryApp/deleteitem/deleteshoeswomen.html')
 #################################################################################
 #################################################################################
 

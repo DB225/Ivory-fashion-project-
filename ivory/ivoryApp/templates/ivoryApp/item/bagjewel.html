@@ -1,0 +1,14 @@
+{% extends 'ivoryApp/women.html' %}
+
+{% block content %}
+<h2>Accessories</h2>
+<a href="{% url 'newbagjewel' %}">Add Accessory</a>
+{% if allAccessories %}
+{% for eachBj in allAccessories %}
+{{ eachBj.bj_title }}
+{{ eachBj.bj_picture }}
+{{ eachBj.bj_size }}
+{{ eachBj.bj_price }}
+{% endfor %}
+{% endif %}
+{% endblock %}

@@ -10,6 +10,8 @@ urlpatterns = [
     # New designer
     path('newdesigner/', views.newdesigner, name='newdesigner'),
 
+    # all items logged in user posted
+    path('userEntries/', views.userEntries, name="userEntries"),
 
     # ROUTES FOR MEN
     path('men/', views.men, name='men'),
