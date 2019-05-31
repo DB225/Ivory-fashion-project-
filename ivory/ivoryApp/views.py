@@ -24,16 +24,16 @@ def newdesigner(request):
 # Entries of the logged in user
 def userEntries(request):
     if request.user.is_authenticated:
-        # This puts the logged in user entry into the variable userLoggedIn
-        userLoggedIn = UserLoginModel.objects.get(username=request.user)
+        # This puts the logged in user entry into the variable loggedInUser
+        loggedInUser = UserLoginModel.objects.get(username=request.user)
         # This will grab all of the entries for the logged in user
-        personalTshirts = Tshirt.objects.filter(ts_ForeignKey=userLoggedIn)
-        personalShirts = Shirt.objects.filter(s_ForeignKey=userLoggedIn)
-        personalPants = Pants.objects.filter(pant_ForeignKey=userLoggedIn)
-        personalShoesMen = ShoesMen.objects.filter(sm_ForeignKey=userLoggedIn)
-        personalDresses = Dress.objects.filter(dress_ForeignKey=userLoggedIn)
-        personalAccessories = BagJewel.objects.filter(bj_ForeignKey=userLoggedIn)
-        personalShoesWomen = ShoesWomen.objects.filter(sw_ForeignKey=userLoggedIn)
+        personalTshirts = Tshirt.objects.filter(ts_ForeignKey=loggedInUser)
+        personalShirts = Shirt.objects.filter(s_ForeignKey=loggedInUser)
+        personalPants = Pants.objects.filter(pant_ForeignKey=loggedInUser)
+        personalShoesMen = ShoesMen.objects.filter(sm_ForeignKey=loggedInUser)
+        personalDresses = Dress.objects.filter(dress_ForeignKey=loggedInUser)
+        personalAccessories = BagJewel.objects.filter(bj_ForeignKey=loggedInUser)
+        personalShoesWomen = ShoesWomen.objects.filter(sw_ForeignKey=loggedInUser)
 
         context = {
             'personalTshirts': personalTshirts,

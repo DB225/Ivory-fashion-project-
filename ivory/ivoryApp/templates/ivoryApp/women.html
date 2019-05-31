@@ -7,8 +7,10 @@
 <body>
 {% block header %}
 <h1>YVORY</h1>
+{% if user.is_authenticated %}
 <nav>
     <ul>
+        <li>{{ user.get_username }}</li>
         <li>
             <a href="{% url 'index' %}">HOME</a>
         </li>
@@ -21,9 +23,37 @@
         <li>
             <a href="{% url 'shoppingCart' %}">CART</a>
         </li>
+        <li>
+            <a href="{% url 'userEntries' %}">MY ITEMS</a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}">LOGOUT</a>
+        </li>
     </ul>
 </nav>
+{% else %}
+<li>GUEST</li>
+<li>
+    <a href="{% url 'index' %}">HOME</a>
+</li>
+<li>
+    <a href="{% url 'men' %}">MEN</a>
+</li>
+<li>
+    <a href="{% url 'women' %}">WOMEN</a>
+</li>
+<li>
+    <a href="{% url 'shoppingCart' %}">CART</a>
+</li>
+<li>
+    <a href="{% url 'newdesigner' %}">NEW DESIGNER</a>
+</li>
+<li>
+    <a href="{% url 'login' %}">LOGIN</a>
+</li>
+{% endif %}
 {% endblock %}
+
 <h4>WOMEN'S COLLECTION</h4>
 <ul>
     <li>

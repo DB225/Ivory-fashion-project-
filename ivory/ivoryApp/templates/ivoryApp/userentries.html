@@ -8,10 +8,88 @@
             <img src="{{ eachTsh.ts_picture.url }}" alt="image item">
         </a>
             <h5>{{ eachTsh.ts_title }}</h5>
+            <h5>{{ eachTsh.ts_picture }}</h5>
+            <h5>{{ eachTsh.ts_size }}</h5>
             <h5>{{ eachTsh.ts_price }}</h5>
             <a href="{% url 'editTshirt' eachTsh.id %}">Edit</a>
             <a href="{% url 'deleteTshirt' eachTsh.id %}">Delete</a> <br> <br>
     {% endfor %}
+
+{% for eachshirt in personalShirts %}
+<a href="{% url 'readShirt' eachshirt.id %}">
+    <img src="{{ eachshirt.s_picture.url }}" alt="image item">
+</a>
+<h5>{{ eachshirt.s_title }}</h5>
+<h5>{{ eachshirt.s_picture }}</h5>
+<h5>{{ eachshirt.s_size }}</h5>
+<h5>{{ eachshirt.s_price }}</h5>
+<a href="{% url 'editShirt' eachshirt.id %}">Edit</a>
+<a href="{% url 'deleteShirt' eachshirt.id %}">Delete</a> <br> <br>
+{% endfor %}
+
+{% for eachpant in personalPants %}
+<a href="{% url 'readpants' eachpant.id %}">
+    <img src="{{ eachpant.pant_picture.url }}" alt="image item">
+</a>
+<h5>{{ eachpant.pant_title }}</h5>
+<h5>{{ eachpant.pant_picture }}</h5>
+<h5>{{ eachpant.pant_size }}</h5>
+<h5>{{ eachpant.pant_price }}</h5>
+<a href="{% url 'editpants' eachpant.id %}">Edit</a>
+<a href="{% url 'deletepants' eachpant.id %}">Delete</a> <br> <br>
+{% endfor %}
+
+{% for eachsm in personalShoesMen %}
+<a href="{% url 'readshoesmen' eachsm.id %}">
+    <img src="{{ eachsm.sm_picture.url }}" alt="image item">
+</a>
+<h5>{{ eachsm.sm_title }}</h5>
+<h5>{{ eachsm.sm_picture }}</h5>
+<h5>{{ eachsm.sm_size }}</h5>
+<h5>{{ eachsm.sm_price }}</h5>
+<a href="{% url 'editshoesmen' eachsm.id %}">Edit</a>
+<a href="{% url 'deleteshoesmen' eachsm.id %}">Delete</a> <br> <br>
+{% endfor %}
+
+
+{% for eachdress in personalDresses %}
+<a href="{% url 'readdress' eachdress.id %}">
+    <img src="{{ eachdress.dress_picture.url }}" alt="image item">
+</a>
+<h5>{{ eachdress.dress_title }}</h5>
+<h5>{{ eachdress.dress_picture }}</h5>
+<h5>{{ eachdress.dress_size }}</h5>
+<h5>{{ eachdress.dress_price }}</h5>
+<a href="{% url 'editdress' eachdress.id %}">Edit</a>
+<a href="{% url 'deletedress' eachdress.id %}">Delete</a> <br> <br>
+{% endfor %}
+
+{% for eachbj in personalAccessories %}
+<a href="{% url 'readbagjewel' eachbj.id %}">
+    <img src="{{ eachbj.bj_picture.url }}" alt="image item">
+</a>
+<h5>{{ eachbj.bj_title }}</h5>
+<h5>{{ eachbj.bj_picture }}</h5>
+<h5>{{ eachbj.bj_size }}</h5>
+<h5>{{ eachbj.bj_price }}</h5>
+<a href="{% url 'editbagjewel' eachbj.id %}">Edit</a>
+<a href="{% url 'deletebagjewel' eachbj.id %}">Delete</a> <br> <br>
+{% endfor %}
+
+
+{% for eachsw in personalShoesWomen %}
+<a href="{% url 'readshoeswomen' eachsw.id %}">
+    <img src="{{ eachsw.sw_picture.url }}" alt="image item">
+</a>
+<h5>{{ eachsw.sw_title }}</h5>
+<h5>{{ eachsw.sw_picture }}</h5>
+<h5>{{ eachsw.sw_size }}</h5>
+<h5>{{ eachsw.sw_price }}</h5>
+<a href="{% url 'editshoeswomen' eachsw.id %}">Edit</a>
+<a href="{% url 'deleteshoeswomen' eachsw.id %}">Delete</a> <br> <br>
+{% endfor %}
+
+
 {% else %}
 <h1>No Post Available</h1>
 {% endif%}
