@@ -1,0 +1,21 @@
+{% extends 'ivoryApp/women.html' %}
+
+{% block content %}
+<h4>My Dresses</h4>
+{% if user.is_authenticated %}
+{% for eachdress in personalDresses %}
+<a href="{% url 'readdress' eachdress.id %}">
+    <img src="{{ eachdress.dress_picture.url }}" alt="image item">
+</a>
+<h5>{{ eachdress.dress_title }}</h5>
+<h5>{{ eachdress.dress_picture }}</h5>
+<h5>{{ eachdress.dress_size }}</h5>
+<h5>{{ eachdress.dress_price }}</h5>
+<a href="{% url 'editdress' eachdress.id %}">Edit</a>
+<a href="{% url 'deletedress' eachdress.id %}">Delete</a> <br> <br>
+{% endfor %}
+{% else %}
+<h1>No Dress Available</h1>
+{% endif%}
+<a href="{% url 'dress' %}">BACK</a>
+{% endblock %}

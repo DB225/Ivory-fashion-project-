@@ -14,39 +14,9 @@ def newdesigner(request):
     print(request.POST)
     if request.method == 'POST' and newprofile.is_valid():
         UserLoginModel.objects.create(username=request.POST["username"], email=request.POST['email'],
-                                      password=request.POST["password"], profilePic=request.POST["profilePic"])
-        User.objects.create_user(request.POST["username"], request.POST['email'], request.POST["password"],
-                                 request.POST["profilePic"])
-        return redirect("index")
+                                      password=request.POST["password"])
+        User.objects.create_user(request.POST["username"], request.POST['email'], request.POST["password"])
     return render(request, 'ivoryApp/newdesigner.html', {'newprofile': newprofile})
-
-
-# Entries of the logged in user
-def userEntries(request):
-    if request.user.is_authenticated:
-        # This puts the logged in user entry into the variable loggedInUser
-        loggedInUser = UserLoginModel.objects.get(username=request.user)
-        # This will grab all of the entries for the logged in user
-        personalTshirts = Tshirt.objects.filter(ts_ForeignKey=loggedInUser)
-        personalShirts = Shirt.objects.filter(s_ForeignKey=loggedInUser)
-        personalPants = Pants.objects.filter(pant_ForeignKey=loggedInUser)
-        personalShoesMen = ShoesMen.objects.filter(sm_ForeignKey=loggedInUser)
-        personalDresses = Dress.objects.filter(dress_ForeignKey=loggedInUser)
-        personalAccessories = BagJewel.objects.filter(bj_ForeignKey=loggedInUser)
-        personalShoesWomen = ShoesWomen.objects.filter(sw_ForeignKey=loggedInUser)
-
-        context = {
-            'personalTshirts': personalTshirts,
-            'personalShirts': personalShirts,
-            'personalPants': personalPants,
-            'personalShoesMen': personalShoesMen,
-            'personalDresses': personalDresses,
-            'personalAccessories': personalAccessories,
-            'personalShoesWomen': personalShoesWomen,
-        }
-        return render(request, 'ivoryApp/userentries.html', context)
-    else:
-        return render(request, 'ivoryApp/userentries.html')
 
 
 # MEN FUNCTIONS
@@ -60,7 +30,7 @@ def tshirtmen(request):
     return render(request, 'ivoryApp/item/tShirtMen.html', {'allTshirts': allTshirts})
 
 
-# new tShirt
+# new T-Shirt
 def newtshirt(request):
     new_ts = TshirtForm(request.POST or None)
     print(request.POST)
@@ -72,7 +42,7 @@ def newtshirt(request):
                               ts_picture=request.FILES["ts_picture"], ts_price=request.POST["ts_price"],
                               ts_ForeignKey=loggedInUser)
 
-        return redirect('tShirtMen')
+        return redirect('tshirtmen')
     else:
         print(new_ts.errors)
         print(new_ts.non_field_errors)
@@ -81,17 +51,29 @@ def newtshirt(request):
     return render(request, 'ivoryApp/newitem/newTshirt.html', {'new_ts': new_ts})
 
 
-# read tShirt
+# your T-Shirt
+def yourtshirt(request):
+    if request.user.is_authenticated:
+        # This puts the logged in user entry into the variable loggedInUser
+        loggedInUser = UserLoginModel.objects.get(username=request.user)
+        # This will grab all of the entries for the logged in user
+        personalTshirts = Tshirt.objects.filter(ts_ForeignKey=loggedInUser)
+        return render(request, 'ivoryApp/youritem/yourtshirt.html', {'personalTshirts': personalTshirts})
+    else:
+        return render(request, 'ivoryApp/youritem/yourtshirt.html')
+
+
+# read T-Shirt
 def readtshirt(request):
     return render(request, 'ivoryApp/readitem/readTshirt.html')
 
 
-# edit tShirt
+# edit T-Shirt
 def edittshirt(request):
     return render(request, 'ivoryApp/edititem/editTshirt.html')
 
 
-# delete tShirt
+# delete T-Shirt
 def deletetshirt(request):
     return render(request, 'ivoryApp/deleteitem/deleteTshirt.html')
 
@@ -116,12 +98,24 @@ def newshirt(request):
                              s_picture=request.FILES["s_picture"], s_price=request.POST["s_price"],
                              s_ForeignKey=loggedInUser)
 
-        return redirect('shirtMen')
+        return redirect('shirtmen')
     else:
         print(new_shirt.errors)
         print(new_shirt.non_field_errors)
         new_shirt = ShirtForm()
     return render(request, 'ivoryApp/newitem/newShirt.html', {'new_shirt': new_shirt})
+
+
+# your shirt
+def yourshirt(request):
+    if request.user.is_authenticated:
+        # This puts the logged in user entry into the variable loggedInUser
+        loggedInUser = UserLoginModel.objects.get(username=request.user)
+        # This will grab all of the entries for the logged in user
+        personalShirts = Shirt.objects.filter(s_ForeignKey=loggedInUser)
+        return render(request, 'ivoryApp/youritem/yourshirt.html', {'personalShirts': personalShirts})
+    else:
+        return render(request, 'ivoryApp/youritem/yourshirt.html')
 
 
 # read shirt
@@ -159,12 +153,24 @@ def newpants(request):
                              pant_picture=request.FILES["pant_picture"], pant_price=request.POST["pant_price"],
                              pant_ForeignKey=loggedInUser)
 
-        return redirect('pantsMen')
+        return redirect('pantsmen')
     else:
         print(new_pant.errors)
         print(new_pant.non_field_errors)
         new_pant = PantsForm()
     return render(request, 'ivoryApp/newitem/newpants.html', {'new_pant': new_pant})
+
+
+# your pants
+def yourpant(request):
+    if request.user.is_authenticated:
+        # This puts the logged in user entry into the variable loggedInUser
+        loggedInUser = UserLoginModel.objects.get(username=request.user)
+        # This will grab all of the entries for the logged in user
+        personalPants = Pants.objects.filter(pant_ForeignKey=loggedInUser)
+        return render(request, 'ivoryApp/youritem/yourpant.html', {'personalPants': personalPants})
+    else:
+        return render(request, 'ivoryApp/youritem/yourpant.html')
 
 
 # read pants
@@ -202,12 +208,24 @@ def newshoesmen(request):
                                 sm_picture=request.FILES["sm_picture"], sm_price=request.POST["sm_price"],
                                 sm_ForeignKey=loggedInUser)
 
-        return redirect('ShoesMen')
+        return redirect('shoesmen')
     else:
         print(new_sm.errors)
         print(new_sm.non_field_errors)
         new_sm = ShoesMenForm()
     return render(request, 'ivoryApp/newitem/newshoesmen.html', {'new_sm': new_sm})
+
+
+# your men shoes
+def yourshoesmen(request):
+    if request.user.is_authenticated:
+        # This puts the logged in user entry into the variable loggedInUser
+        loggedInUser = UserLoginModel.objects.get(username=request.user)
+        # This will grab all of the entries for the logged in user
+        personalShoesMen = ShoesMen.objects.filter(sm_ForeignKey=loggedInUser)
+        return render(request, 'ivoryApp/youritem/yourshoesmen.html', {'personalShoesMen': personalShoesMen})
+    else:
+        return render(request, 'ivoryApp/youritem/yourshoesmen.html')
 
 
 # read men shoes
@@ -260,6 +278,18 @@ def newdress(request):
     return render(request, 'ivoryApp/newitem/newdress.html', {'new_dress': new_dress})
 
 
+# your dress
+def yourdress(request):
+    if request.user.is_authenticated:
+        # This puts the logged in user entry into the variable loggedInUser
+        loggedInUser = UserLoginModel.objects.get(username=request.user)
+        # This will grab all of the entries for the logged in user
+        personalDresses = Dress.objects.filter(dress_ForeignKey=loggedInUser)
+        return render(request, 'ivoryApp/youritem/yourdress.html', {'personalDresses': personalDresses})
+    else:
+        return render(request, 'ivoryApp/youritem/yourdress.html')
+
+
 # read dress
 def readdress(request):
     return render(request, 'ivoryApp/readitem/readdress.html')
@@ -303,6 +333,18 @@ def newbagjewel(request):
     return render(request, 'ivoryApp/newitem/newbagjewel.html', {'new_bj': new_bj})
 
 
+# your accessories
+def yourbagjewel(request):
+    if request.user.is_authenticated:
+        # This puts the logged in user entry into the variable loggedInUser
+        loggedInUser = UserLoginModel.objects.get(username=request.user)
+        # This will grab all of the entries for the logged in user
+        personalAccessories = BagJewel.objects.filter(bj_ForeignKey=loggedInUser)
+        return render(request, 'ivoryApp/youritem/yourbagjewel.html', {'personalAccessories': personalAccessories})
+    else:
+        return render(request, 'ivoryApp/youritem/yourbagjewel.html')
+
+
 # read accessory
 def readbagjewel(request):
     return render(request, 'ivoryApp/readitem/readbagjewel.html')
@@ -338,12 +380,24 @@ def newshoeswomen(request):
                                   sw_picture=request.FILES["sw_picture"], sw_price=request.POST["sw_price"],
                                   sw_ForeignKey=loggedInUser)
 
-        return redirect('shoesWomen')
+        return redirect('shoeswomen')
     else:
         print(new_sw.errors)
         print(new_sw.non_field_errors)
         new_sw = ShoesWomenForm()
     return render(request, 'ivoryApp/newitem/newshoeswomen.html', {'new_sw': new_sw})
+
+
+# your women shoes
+def yourshoeswomen(request):
+    if request.user.is_authenticated:
+        # This puts the logged in user entry into the variable loggedInUser
+        loggedInUser = UserLoginModel.objects.get(username=request.user)
+        # This will grab all of the entries for the logged in user
+        personalShoesWomen = ShoesWomen.objects.filter(sw_ForeignKey=loggedInUser)
+        return render(request, 'ivoryApp/youritem/yourshoeswomen.html', {'personalShoesWomen': personalShoesWomen})
+    else:
+        return render(request, 'ivoryApp/youritem/yourshoeswomen.html')
 
 
 # read women shoes

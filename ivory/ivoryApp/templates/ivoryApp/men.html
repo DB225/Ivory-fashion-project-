@@ -7,6 +7,7 @@
 <body>
 {% block header %}
 
+
 {% if user.is_authenticated %}
 <h1>YVORY</h1>
 <nav>
@@ -25,36 +26,36 @@
             <a href="{% url 'shoppingCart' %}">CART</a>
         </li>
         <li>
-            <a href="{% url 'userEntries' %}">MY ITEMS</a>
-        </li>
-        <li>
             <a href="{% url 'logout' %}">LOGOUT</a>
         </li>
     </ul>
 </nav>
 
 {% else %}
-<ul>
-    <li>GUEST</li>
-    <li>
-        <a href="{% url 'index' %}">HOME</a>
-    </li>
-    <li>
-        <a href="{% url 'men' %}">MEN</a>
-    </li>
-    <li>
-        <a href="{% url 'women' %}">WOMEN</a>
-    </li>
-    <li>
-        <a href="{% url 'shoppingCart' %}">CART</a>
-    </li>
-    <li>
-        <a href="{% url 'newdesigner' %}">NEW DESIGNER</a>
-    </li>
-    <li>
-        <a href="{% url 'login' %}">LOGIN</a>
-    </li>
-</ul>
+<h1>YVORY</h1>
+<nav>
+    <ul>
+        <li>GUEST</li>
+        <li>
+            <a href="{% url 'index' %}">HOME</a>
+        </li>
+        <li>
+            <a href="{% url 'men' %}">MEN</a>
+        </li>
+        <li>
+            <a href="{% url 'women' %}">WOMEN</a>
+        </li>
+        <li>
+            <a href="{% url 'shoppingCart' %}">CART</a>
+        </li>
+        <li>
+            <a href="{% url 'newdesigner' %}">NEW DESIGNER</a>
+        </li>
+        <li>
+            <a href="{% url 'login' %}">LOGIN</a>
+        </li>
+    </ul>
+</nav>
 {% endif %}
 {% endblock %}
 <h4>MEN'S COLLECTION</h4>

@@ -32,7 +32,6 @@ class UserLoginForm(forms.ModelForm):
             'username': 'Username',
             'email': 'Email',
             'password': 'Password',
-            'profilePic': 'Photo',
         }
         widgets = {
             "password": forms.PasswordInput()

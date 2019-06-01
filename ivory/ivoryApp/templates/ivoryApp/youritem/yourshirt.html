@@ -1,0 +1,22 @@
+{% extends 'ivoryApp/men.html' %}
+
+{% block content %}
+<h4>My Shirts</h4>
+{% if user.is_authenticated %}
+{% for eachshirt in personalShirts %}
+<a href="{% url 'readShirt' eachshirt.id %}">
+    <img src="{{ eachshirt.s_picture.url }}" alt="image item">
+</a>
+<h5>{{ eachshirt.s_title }}</h5>
+<h5>{{ eachshirt.s_picture }}</h5>
+<h5>{{ eachshirt.s_size }}</h5>
+<h5>{{ eachshirt.s_price }}</h5>
+<a href="{% url 'editShirt' eachshirt.id %}">Edit</a>
+<a href="{% url 'deleteShirt' eachshirt.id %}">Delete</a> <br> <br>
+{% endfor %}
+
+{% else %}
+<h1>No Shirt Available</h1>
+{% endif%}
+<a href="{% url 'shirtmen' %}">BACK</a>
+{% endblock %}

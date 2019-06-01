@@ -2,13 +2,24 @@
 
 {% block content %}
 <h2>T-Shirt</h2>
+{% if user.is_authenticated %}
 <a href="{% url 'newtshirt' %}">Add T-Shirt</a>
+<a href="{% url 'yourtshirt' %}">My T-Shirts</a>
+{% endif %}
 {% if allTshirts %}
 {% for eachTsh in allTshirts %}
-{{ eachTsh.ts_title }}
-{{ eachTsh.ts_picture }}
-{{ eachTsh.ts_size }}
-{{ eachTsh.ts_price }}
+<h5>{{ eachTsh.ts_title }}</h5>
+<h5>
+    <a href="{% url 'readtshirt' eachTsh.id %}">
+        <img src="{{eachTsh.ts_picture.url}}" alt="image item">
+    </a>
+</h5>
+<h5>Size : {{ eachTsh.ts_size }}</h5>
+<h5>Price : {{ eachTsh.ts_price }} $</h5>
+{% if user.is_authenticated %}
+<a href="{% url 'edittshirt' eachTsh.id %}">Edit</a>
+<a href="{% url 'deletetshirt' eachTsh.id %}">Delete</a> <br> <br>
+{% endif %}
 {% endfor %}
 {% endif %}
 {% endblock %}
