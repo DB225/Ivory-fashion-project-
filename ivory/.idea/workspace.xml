@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16a62392-b657-40e7-9ca7-9afaf698cbc4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivory/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ivory/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivoryApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivoryApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/bagjewel.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/bagjewel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/dress.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/dress.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/pantsMen.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/pantsMen.html" afterDir="false" />
@@ -15,11 +10,13 @@
       <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesMen.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesMen.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesWomen.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesWomen.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/tShirtMen.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/tShirtMen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/men.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/men.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newdesigner.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newdesigner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/userentries.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/women.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/women.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivoryApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourbagjewel.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourbagjewel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourdress.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourdress.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourpant.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourpant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshirt.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshirt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoesmen.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoesmen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoeswomen.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoeswomen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourtshirt.html" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourtshirt.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ivoryApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ivoryApp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ivoryApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="388" lean-forward="true" selection-start-line="388" selection-end-line="388" />
+            <state relative-caret-position="286">
+              <caret line="328" column="9" lean-forward="true" selection-start-line="328" selection-start-column="9" selection-end-line="328" selection-end-column="9" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
               </folding>
@@ -43,31 +40,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourtshirt.html">
+        <entry file="file://$PROJECT_DIR$/ivoryApp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/tShirtMen.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="195">
+              <caret line="64" column="80" selection-start-line="64" selection-start-column="80" selection-end-line="64" selection-end-column="80" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ivoryApp/urls.py">
+        <entry file="file://$PROJECT_DIR$/ivoryApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="21" column="82" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="82" />
+            <state relative-caret-position="90">
+              <caret line="79" column="29" lean-forward="true" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourbagjewel.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -126,7 +126,6 @@
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newshoeswomen.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/shoesWomen.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newdress.html" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newbagjewel.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newdesigner.html" />
         <option value="$PROJECT_DIR$/ivoryApp/forms.py" />
@@ -137,21 +136,22 @@
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/women.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/men.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/base.html" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoeswomen.html" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourdress.html" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourbagjewel.html" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoesmen.html" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourpant.html" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshirt.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/tShirtMen.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourtshirt.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shirtMen.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/pantsMen.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourpant.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesMen.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoesmen.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/dress.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/bagjewel.html" />
         <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesWomen.html" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourtshirt.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourdress.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoeswomen.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshirt.html" />
         <option value="$PROJECT_DIR$/ivoryApp/views.py" />
-        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/tShirtMen.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newbagjewel.html" />
+        <option value="$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourbagjewel.html" />
       </list>
     </option>
   </component>
@@ -202,14 +202,6 @@
               <item name="ivoryApp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="ivoryApp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="ivory" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ivory" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="ivoryApp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ivoryApp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="item" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="ivory" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -280,7 +272,7 @@
     <frame x="0" y="25" width="1600" height="824" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16645244" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16645244" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -294,7 +286,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4993573" visible="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4993573" visible="true" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50064266" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -456,13 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newpants.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newshoesmen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -478,13 +463,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newdress.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newbagjewel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
@@ -522,16 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivory/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -561,48 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourdress.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourbagjewel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoeswomen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoesmen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourpant.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshirt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/men.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-375">
@@ -610,82 +536,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shirtMen.html">
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/readitem/readTshirt.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourtshirt.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/pantsMen.html">
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoesmen.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesMen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/dress.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/bagjewel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state relative-caret-position="180">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesWomen.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="330">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/readitem/readTshirt.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourdress.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/dress.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/bagjewel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshoeswomen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shoesMen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/shirtMen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/tShirtMen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourshirt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ivoryApp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="82" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="82" />
+        <state relative-caret-position="195">
+          <caret line="64" column="80" selection-start-line="64" selection-start-column="80" selection-end-line="64" selection-end-column="80" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/pantsMen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourpant.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newpants.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/newitem/newbagjewel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ivoryApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="388" lean-forward="true" selection-start-line="388" selection-end-line="388" />
+        <state relative-caret-position="286">
+          <caret line="328" column="9" lean-forward="true" selection-start-line="328" selection-start-column="9" selection-end-line="328" selection-end-column="9" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourtshirt.html">
+    <entry file="file://$PROJECT_DIR$/ivoryApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="39" />
+        <state relative-caret-position="90">
+          <caret line="79" column="29" lean-forward="true" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/item/tShirtMen.html">
+    <entry file="file://$PROJECT_DIR$/ivoryApp/templates/ivoryApp/youritem/yourbagjewel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="150">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>

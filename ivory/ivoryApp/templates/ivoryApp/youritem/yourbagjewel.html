@@ -3,14 +3,14 @@
 {% block content %}
 <h4>My Accessories</h4>
 {% if user.is_authenticated %}
+<a href="{% url 'newbagjewel' %}">Add Accessory</a>
 {% for eachbj in personalAccessories %}
+<h5>{{ eachbj.bj_title }}</h5>
 <a href="{% url 'readbagjewel' eachbj.id %}">
     <img src="{{ eachbj.bj_picture.url }}" alt="image item">
 </a>
-<h5>{{ eachbj.bj_title }}</h5>
-<h5>{{ eachbj.bj_picture }}</h5>
-<h5>{{ eachbj.bj_size }}</h5>
-<h5>{{ eachbj.bj_price }}</h5>
+<h5>Size : {{ eachbj.bj_size }}</h5>
+<h5>Price : {{ eachbj.bj_price }} $</h5>
 <a href="{% url 'editbagjewel' eachbj.id %}">Edit</a>
 <a href="{% url 'deletebagjewel' eachbj.id %}">Delete</a> <br> <br>
 {% endfor %}

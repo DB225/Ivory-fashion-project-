@@ -321,9 +321,9 @@ def newbagjewel(request):
     if request.method == 'POST' or new_bj.is_valid():
         new_bj = BagJewelForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        BagJewelForm.objects.create(bj_title=request.POST["bj_title"], bj_size=request.POST["bj_size"],
-                                    bj_picture=request.FILES["bj_picture"], bj_price=request.POST["bj_price"],
-                                    bj_ForeignKey=loggedInUser)
+        BagJewel.objects.create(bj_title=request.POST["bj_title"], bj_size=request.POST["bj_size"],
+                                bj_picture=request.FILES["bj_picture"], bj_price=request.POST["bj_price"],
+                                bj_ForeignKey=loggedInUser)
 
         return redirect('bagjewel')
     else:

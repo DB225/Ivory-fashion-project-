@@ -1,9 +1,8 @@
 {% extends 'ivoryApp/men.html' %}
 
 {% block content %}
-<h2>T-Shirt</h2>
+<h2>T-Shirts</h2>
 {% if user.is_authenticated %}
-<a href="{% url 'newtshirt' %}">Add T-Shirt</a>
 <a href="{% url 'yourtshirt' %}">My T-Shirts</a>
 {% endif %}
 {% if allTshirts %}
