@@ -6,9 +6,7 @@
 <a href="{% url 'newbagjewel' %}">Add Accessory</a>
 {% for eachbj in personalAccessories %}
 <h5>{{ eachbj.bj_title }}</h5>
-<a href="{% url 'readbagjewel' eachbj.id %}">
     <img src="{{ eachbj.bj_picture.url }}" alt="image item">
-</a>
 <h5>Size : {{ eachbj.bj_size }}</h5>
 <h5>Price : {{ eachbj.bj_price }} $</h5>
 <a href="{% url 'editbagjewel' eachbj.id %}">Edit</a>

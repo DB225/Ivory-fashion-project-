@@ -63,11 +63,6 @@ def yourtshirt(request):
         return render(request, 'ivoryApp/youritem/yourtshirt.html')
 
 
-# read T-Shirt
-def readtshirt(request):
-    return render(request, 'ivoryApp/readitem/readTshirt.html')
-
-
 # edit T-Shirt
 def edittshirt(request):
     return render(request, 'ivoryApp/edititem/editTshirt.html')
@@ -116,11 +111,6 @@ def yourshirt(request):
         return render(request, 'ivoryApp/youritem/yourshirt.html', {'personalShirts': personalShirts})
     else:
         return render(request, 'ivoryApp/youritem/yourshirt.html')
-
-
-# read shirt
-def readshirt(request):
-    return render(request, 'ivoryApp/readitem/readShirt.html')
 
 
 # edit shirt
@@ -173,11 +163,6 @@ def yourpant(request):
         return render(request, 'ivoryApp/youritem/yourpant.html')
 
 
-# read pants
-def readpants(request):
-    return render(request, 'ivoryApp/readitem/readpants.html')
-
-
 # edit pants
 def editpants(request):
     return render(request, 'ivoryApp/edititem/editpants.html')
@@ -226,11 +211,6 @@ def yourshoesmen(request):
         return render(request, 'ivoryApp/youritem/yourshoesmen.html', {'personalShoesMen': personalShoesMen})
     else:
         return render(request, 'ivoryApp/youritem/yourshoesmen.html')
-
-
-# read men shoes
-def readshoesmen(request):
-    return render(request, 'ivoryApp/readitem/readshoesmen.html')
 
 
 # edit men shoes
@@ -290,11 +270,6 @@ def yourdress(request):
         return render(request, 'ivoryApp/youritem/yourdress.html')
 
 
-# read dress
-def readdress(request):
-    return render(request, 'ivoryApp/readitem/readdress.html')
-
-
 # edit dress
 def editdress(request):
     return render(request, 'ivoryApp/edititem/editdress.html')
@@ -345,11 +320,6 @@ def yourbagjewel(request):
         return render(request, 'ivoryApp/youritem/yourbagjewel.html')
 
 
-# read accessory
-def readbagjewel(request):
-    return render(request, 'ivoryApp/readitem/readbagjewel.html')
-
-
 # edit accessory
 def editbagjewel(request):
     return render(request, 'ivoryApp/edititem/editbagjewel.html')
@@ -398,11 +368,6 @@ def yourshoeswomen(request):
         return render(request, 'ivoryApp/youritem/yourshoeswomen.html', {'personalShoesWomen': personalShoesWomen})
     else:
         return render(request, 'ivoryApp/youritem/yourshoeswomen.html')
-
-
-# read women shoes
-def readshoeswomen(request):
-    return render(request, 'ivoryApp/readitem/readshoeswomen.html')
 
 
 # edit women shoes

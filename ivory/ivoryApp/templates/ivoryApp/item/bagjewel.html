@@ -9,9 +9,7 @@
 {% for eachBj in allAccessories %}
 <h5>{{ eachBj.bj_title }}</h5>
 <h5>
-    <a href="{% url 'readbagjewel' eachBj.id %}">
-        <img src="{{eachBj.bj_picture.url}}" alt="image item">
-    </a>
+    <img src="{{eachBj.bj_picture.url}}" alt="image item">
 </h5>
 <h5>Size : {{ eachBj.bj_size }}</h5>
 <h5>Price : {{ eachBj.bj_price }} $</h5>

@@ -9,9 +9,7 @@
 {% for eachTsh in allTshirts %}
 <h5>{{ eachTsh.ts_title }}</h5>
 <h5>
-    <a href="{% url 'readtshirt' eachTsh.id %}">
-        <img src="{{eachTsh.ts_picture.url}}" alt="image item">
-    </a>
+    <img src="{{eachTsh.ts_picture.url}}" alt="image item">
 </h5>
 <h5>Size : {{ eachTsh.ts_size }}</h5>
 <h5>Price : {{ eachTsh.ts_price }} $</h5>

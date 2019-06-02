@@ -9,9 +9,7 @@
 {% for eachPant in allPants %}
 <h5>{{ eachPant.pant_title }}</h5>
 <h5>
-    <a href="{% url 'readpants' eachPant.id %}">
-        <img src="{{eachPant.pant_picture.url}}" alt="image item">
-    </a>
+    <img src="{{eachPant.pant_picture.url}}" alt="image item">
 </h5>
 <h5>Size : {{ eachPant.pant_size }}</h5>
 <h5>Price : {{ eachPant.pant_price }} $</h5>

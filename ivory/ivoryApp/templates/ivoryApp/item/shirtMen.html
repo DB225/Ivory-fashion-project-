@@ -9,9 +9,7 @@
 {% for eachSh in allShirts %}
 <h5>{{ eachSh.s_title }}</h5>
 <h5>
-    <a href="{% url 'readshirt' eachSh.id %}">
-        <img src="{{eachSh.s_picture.url}}" alt="image item">
-    </a>
+    <img src="{{eachSh.s_picture.url}}" alt="image item">
 </h5>
 <h5>Size : {{ eachSh.s_size }}</h5>
 <h5>Price : {{ eachSh.s_price }} $</h5>

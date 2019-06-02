@@ -6,9 +6,7 @@
 <a href="{% url 'newdress' %}">Add Dress</a>
 {% for eachdress in personalDresses %}
 <h5>{{ eachdress.dress_title }}</h5>
-<a href="{% url 'readdress' eachdress.id %}">
     <img src="{{ eachdress.dress_picture.url }}" alt="image item">
-</a>
 <h5>Size : {{ eachdress.dress_size }}</h5>
 <h5>Price : {{ eachdress.dress_price }}</h5>
 <a href="{% url 'editdress' eachdress.id %}">Edit</a>

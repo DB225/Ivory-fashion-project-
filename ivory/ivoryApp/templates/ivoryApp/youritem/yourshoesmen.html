@@ -6,9 +6,7 @@
 <a href="{% url 'newshoesmen' %}">Add Shoes</a>
 {% for eachsm in personalShoesMen %}
 <h5>{{ eachsm.sm_title }}</h5>
-<a href="{% url 'readshoesmen' eachsm.id %}">
     <img src="{{ eachsm.sm_picture.url }}" alt="image item">
-</a>
 <h5>{{ eachsm.sm_size }}</h5>
 <h5>{{ eachsm.sm_price }}</h5>
 <a href="{% url 'editshoesmen' eachsm.id %}">Edit</a>

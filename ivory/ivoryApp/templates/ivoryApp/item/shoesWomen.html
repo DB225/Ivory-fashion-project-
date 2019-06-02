@@ -10,9 +10,7 @@
 
 <h5>{{ eachsw.sw_title }}</h5>
 <h5>
-    <a href="{% url 'readshoeswomen' eachsw.id %}">
-        <img src="{{eachsw.sw_picture.url}}" alt="image item">
-    </a>
+    <img src="{{eachsw.sw_picture.url}}" alt="image item">
 </h5>
 <h5>Size : {{ eachsw.sw_size }}</h5>
 <h5>Price : {{ eachsw.sw_price }} $</h5>
