@@ -26,8 +26,9 @@ def men(request):
 
 # T-Shirt
 def tshirtmen(request):
+    form = MyForm()
     allTshirts = Tshirt.objects.all()
-    return render(request, 'ivoryApp/item/tShirtMen.html', {'allTshirts': allTshirts})
+    return render(request, 'ivoryApp/item/tShirtMen.html', {'allTshirts': allTshirts, 'form': form})
 
 
 # new T-Shirt
@@ -38,9 +39,8 @@ def newtshirt(request):
     if request.method == 'POST' or new_ts.is_valid():
         new_ts = TshirtForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        Tshirt.objects.create(ts_title=request.POST["ts_title"], ts_size=request.POST["ts_size"],
-                              ts_picture=request.FILES["ts_picture"], ts_price=request.POST["ts_price"],
-                              ts_ForeignKey=loggedInUser)
+        Tshirt.objects.create(ts_title=request.POST["ts_title"], ts_picture=request.FILES["ts_picture"],
+                              ts_price=request.POST["ts_price"], ts_ForeignKey=loggedInUser)
 
         return redirect('tshirtmen')
     else:
@@ -86,8 +86,9 @@ def deletetshirt(request, deletets_id):
 
 # Shirt
 def shirtmen(request):
+    form = MyForm()
     allShirts = Shirt.objects.all()
-    return render(request, 'ivoryApp/item/shirtMen.html', {'allShirts': allShirts})
+    return render(request, 'ivoryApp/item/shirtMen.html', {'allShirts': allShirts, 'form': form})
 
 
 # new shirt
@@ -145,8 +146,9 @@ def deleteshirt(request, deletesh_id):
 
 # Pants
 def pantsmen(request):
+    form = MyForm()
     allPants = Pants.objects.all()
-    return render(request, 'ivoryApp/item/pantsMen.html', {'allPants': allPants})
+    return render(request, 'ivoryApp/item/pantsMen.html', {'allPants': allPants, 'form': form})
 
 
 # new pants
@@ -204,8 +206,9 @@ def deletepants(request, deletep_id):
 
 # Shoes
 def shoesmen(request):
+    form = MyForm()
     allShoesMen = ShoesMen.objects.all()
-    return render(request, 'ivoryApp/item/shoesMen.html', {'allShoesMen': allShoesMen})
+    return render(request, 'ivoryApp/item/shoesMen.html', {'allShoesMen': allShoesMen, 'form': form})
 
 
 # new men shoes
@@ -270,8 +273,9 @@ def women(request):
 
 # Dress
 def dress(request):
+    form = MyForm()
     allDresses = Dress.objects.all()
-    return render(request, 'ivoryApp/item/dress.html', {'allDresses': allDresses})
+    return render(request, 'ivoryApp/item/dress.html', {'allDresses': allDresses, 'form': form})
 
 
 # new dress
@@ -329,8 +333,9 @@ def deletedress(request, deletedr_id):
 
 # Bag & Jewelry
 def bagjewel(request):
+    form = MyForm()
     allAccessories = BagJewel.objects.all()
-    return render(request, 'ivoryApp/item/bagjewel.html', {'allAccessories': allAccessories})
+    return render(request, 'ivoryApp/item/bagjewel.html', {'allAccessories': allAccessories, 'form': form})
 
 
 # new accessory
@@ -388,8 +393,9 @@ def deletebagjewel(request, deleteacc_id):
 
 # Shoes
 def shoeswomen(request):
+    form = MyForm()
     allShoesWomen = ShoesWomen.objects.all()
-    return render(request, 'ivoryApp/item/shoesWomen.html', {'allShoesWomen': allShoesWomen})
+    return render(request, 'ivoryApp/item/shoesWomen.html', {'allShoesWomen': allShoesWomen, 'form': form})
 
 
 # new women shoes

@@ -11,7 +11,22 @@
 <h5>
     <img src="{{eachdress.dress_picture.url}}" alt="image item">
 </h5>
-<h5>Size : {{ eachdress.dress_size }}</h5>
+
+<ul> Size :
+    {% for choice in form.dress_size.field.choices %}
+    <li>
+        <input type="radio" name="dress_size" value="{{choice.0}}"
+               {% ifequal form.dress_size.data choice.0 %}
+               checked="checked"
+               {% endifequal %}/>
+        <label>
+            {{choice.1}}
+        </label>
+    </li>
+    {% endfor %}
+</ul>
+
+
 <h5>Price : {{ eachdress.dress_price }} $</h5>
 {% if user.is_authenticated %}
 <a href="{% url 'editdress' eachdress.id %}">Edit</a>

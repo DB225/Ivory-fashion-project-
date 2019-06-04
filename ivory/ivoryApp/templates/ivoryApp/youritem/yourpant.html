@@ -7,8 +7,7 @@
 {% for eachpant in personalPants %}
 <h5>{{ eachpant.pant_title }}</h5>
     <img src="{{ eachpant.pant_picture.url }}" alt="image item">
-<h5>{{ eachpant.pant_size }}</h5>
-<h5>{{ eachpant.pant_price }}</h5>
+<h5>Price : {{ eachpant.pant_price }} $</h5>
 <a href="{% url 'editpants' eachpant.id %}">Edit</a>
 <a href="{% url 'deletepants' eachpant.id %}">Delete</a> <br> <br>
 {% endfor %}

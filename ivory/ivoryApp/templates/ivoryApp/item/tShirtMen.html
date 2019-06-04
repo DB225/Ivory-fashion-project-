@@ -11,7 +11,25 @@
 <h5>
     <img src="{{eachTsh.ts_picture.url}}" alt="image item">
 </h5>
-<h5>Size : {{ eachTsh.ts_size }}</h5>
+
+
+<ul> Size :
+    {% for choice in form.ts_size.field.choices %}
+    <li>
+        <input type="radio" name="ts_size" value="{{choice.0}}"
+               {% ifequal form.ts_size.data choice.0 %}
+               checked="checked"
+               {% endifequal %}/>
+        <label>
+            {{choice.1}}
+        </label>
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+<!--<h5>Size : {{ eachTsh.ts_size }}</h5>-->
 <h5>Price : {{ eachTsh.ts_price }} $</h5>
 {% if user.is_authenticated %}
 <a href="{% url 'edittshirt' eachTsh.id %}">Edit</a>

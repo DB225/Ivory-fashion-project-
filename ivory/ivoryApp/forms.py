@@ -45,12 +45,12 @@ class TshirtForm(forms.ModelForm):
         labels = {
             'ts_title': 'Title',
             'ts_picture': 'Picture',
-            'ts_size': 'Available Size',
+            # 'ts_size': 'Available Size',
             'ts_price': 'Price (USD)',
         }
-        widgets = {
-            'ts_size': forms.Select(choices=CUSTOMER_SIZE)
-        }
+        # widgets = {
+        #     'ts_size': forms.Select(choices=CUSTOMER_SIZE)
+        # }
 
 
 class ShirtForm(forms.ModelForm):
@@ -63,9 +63,9 @@ class ShirtForm(forms.ModelForm):
             's_size': 'Available Size',
             's_price': 'Price (USD)',
         }
-        widgets = {
-            's_size': forms.Select(choices=CUSTOMER_SIZE)
-        }
+        # widgets = {
+        #     's_size': forms.Select(choices=CUSTOMER_SIZE)
+        # }
 
 
 class PantsForm(forms.ModelForm):
@@ -78,9 +78,9 @@ class PantsForm(forms.ModelForm):
             'pant_size': 'Available Size',
             'pant_price': 'Price (USD)',
         }
-        widgets = {
-            'pant_size': forms.Select(choices=CUSTOMER_SIZE)
-        }
+        # widgets = {
+        #     'pant_size': forms.Select(choices=CUSTOMER_SIZE)
+        # }
 
 
 class ShoesMenForm(forms.ModelForm):
@@ -93,9 +93,9 @@ class ShoesMenForm(forms.ModelForm):
             'sm_size': 'Available Size',
             'sm_price': 'Price (USD)',
         }
-        widgets = {
-            'sm_size': forms.Select(choices=CUSTOMER_SIZE_SHOES)
-        }
+        # widgets = {
+        #     'sm_size': forms.Select(choices=CUSTOMER_SIZE_SHOES)
+        # }
 
 
 class DressForm(forms.ModelForm):
@@ -108,9 +108,9 @@ class DressForm(forms.ModelForm):
             'dress_size': 'Available Size',
             'dress_price': 'Price (USD)',
         }
-        widgets = {
-            'dress_size': forms.Select(choices=CUSTOMER_SIZE)
-        }
+        # widgets = {
+        #     'dress_size': forms.Select(choices=CUSTOMER_SIZE)
+        # }
 
 
 class BagJewelForm(forms.ModelForm):
@@ -123,9 +123,9 @@ class BagJewelForm(forms.ModelForm):
             'bj_size': 'Available Size',
             'bj_price': 'Price (USD)',
         }
-        widgets = {
-            'bj_size': forms.Select(choices=CUSTOMER_SIZE_ACCESSORY)
-        }
+        # widgets = {
+        #     'bj_size': forms.Select(choices=CUSTOMER_SIZE_ACCESSORY)
+        # }
 
 
 class ShoesWomenForm(forms.ModelForm):
@@ -138,6 +138,17 @@ class ShoesWomenForm(forms.ModelForm):
             'sw_size': 'Available Size',
             'sw_price': 'Price (USD)',
         }
-        widgets = {
-            'sw_size': forms.Select(choices=CUSTOMER_SIZE_SHOES)
-        }
+        # widgets = {
+        #     'sw_size': forms.Select(choices=CUSTOMER_SIZE_SHOES)
+        # }
+
+
+class MyForm(forms.Form):
+    my_choice_field = forms.ChoiceField(choices=CUSTOMER_SIZE_ACCESSORY)
+    ts_size = forms.ChoiceField(choices=CUSTOMER_SIZE)
+    s_size = forms.ChoiceField(choices=CUSTOMER_SIZE)
+    pant_size = forms.ChoiceField(choices=CUSTOMER_SIZE)
+    sm_size = forms.ChoiceField(choices=CUSTOMER_SIZE_SHOES)
+    dress_size = forms.ChoiceField(choices=CUSTOMER_SIZE)
+    bj_size = forms.ChoiceField(choices=CUSTOMER_SIZE_ACCESSORY)
+    sw_size = forms.ChoiceField(choices=CUSTOMER_SIZE_SHOES)

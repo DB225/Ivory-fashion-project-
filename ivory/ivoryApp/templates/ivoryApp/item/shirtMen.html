@@ -11,7 +11,19 @@
 <h5>
     <img src="{{eachSh.s_picture.url}}" alt="image item">
 </h5>
-<h5>Size : {{ eachSh.s_size }}</h5>
+
+<ul>Size :
+    {% for choice in form.s_size.field.choices %}
+    <li>
+        <input type="radio" name="s_size" value="{{choice.0}}"
+               {% ifequal form.s_size.data choice.0 %}
+               checked="checked"
+               {% endifequal %}/>
+        <label>{{choice.1}}</label>
+    </li>
+    {% endfor %}
+</ul>
+
 <h5>Price : {{ eachSh.s_price }} $</h5>
 {% if user.is_authenticated %}
 <a href="{% url 'editshirt' eachSh.id %}">Edit</a>

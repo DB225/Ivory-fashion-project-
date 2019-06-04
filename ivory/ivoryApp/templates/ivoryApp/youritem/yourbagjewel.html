@@ -7,7 +7,6 @@
 {% for eachbj in personalAccessories %}
 <h5>{{ eachbj.bj_title }}</h5>
     <img src="{{ eachbj.bj_picture.url }}" alt="image item">
-<h5>Size : {{ eachbj.bj_size }}</h5>
 <h5>Price : {{ eachbj.bj_price }} $</h5>
 <a href="{% url 'editbagjewel' eachbj.id %}">Edit</a>
 <a href="{% url 'deletebagjewel' eachbj.id %}">Delete</a> <br> <br>

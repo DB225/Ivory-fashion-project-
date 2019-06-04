@@ -11,7 +11,21 @@
 <h5>
     <img src="{{eachBj.bj_picture.url}}" alt="image item">
 </h5>
-<h5>Size : {{ eachBj.bj_size }}</h5>
+
+<ul> Size :
+    {% for choice in form.bj_size.field.choices %}
+    <li>
+        <input type="radio" name="bj_size" value="{{choice.0}}"
+               {% ifequal form.bj_size.data choice.0 %}
+               checked="checked"
+               {% endifequal %}/>
+        <label>
+            {{choice.1}}
+        </label>
+    </li>
+    {% endfor %}
+</ul>
+
 <h5>Price : {{ eachBj.bj_price }} $</h5>
 {% if user.is_authenticated %}
 <a href="{% url 'editbagjewel' eachBj.id %}">Edit</a>

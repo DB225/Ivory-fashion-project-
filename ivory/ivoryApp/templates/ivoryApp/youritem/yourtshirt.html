@@ -8,8 +8,7 @@
 <h5>{{ eachTsh.ts_title }}</h5>
     <img src="{{ eachTsh.ts_picture.url }}" alt="image item">
 </a>
-<h5>{{ eachTsh.ts_size }}</h5>
-<h5>{{ eachTsh.ts_price }}</h5>
+<h5>Price: {{ eachTsh.ts_price }} $</h5>
 <a href="{% url 'edittshirt' eachTsh.id %}">Edit</a>
 <a href="{% url 'deletetshirt' eachTsh.id %}">Delete</a> <br> <br>
 {% endfor %}

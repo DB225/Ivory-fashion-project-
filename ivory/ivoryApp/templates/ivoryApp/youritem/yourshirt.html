@@ -7,8 +7,7 @@
 {% for eachshirt in personalShirts %}
 <h5>{{ eachshirt.s_title }}</h5>
     <img src="{{ eachshirt.s_picture.url }}" alt="image item">
-<h5>{{ eachshirt.s_size }}</h5>
-<h5>{{ eachshirt.s_price }}</h5>
+<h5>Price : {{ eachshirt.s_price }} $</h5>
 <a href="{% url 'editshirt' eachshirt.id %}">Edit</a>
 <a href="{% url 'deleteshirt' eachshirt.id %}">Delete</a> <br> <br>
 {% endfor %}

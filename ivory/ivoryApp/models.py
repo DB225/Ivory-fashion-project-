@@ -18,7 +18,7 @@ class UserLoginModel(models.Model):
 class Tshirt(models.Model):
     ts_title = models.CharField(max_length=200)
     ts_picture = models.ImageField(upload_to="media/images/", null=True, blank=True)
-    ts_size = models.CharField(max_length=20)
+    # ts_size = models.CharField(max_length=20)
     ts_price = models.IntegerField(default=0)
     ts_ForeignKey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -30,7 +30,7 @@ class Tshirt(models.Model):
 class Shirt(models.Model):
     s_title = models.CharField(max_length=200)
     s_picture = models.ImageField(upload_to="media/images/", null=True, blank=True)
-    s_size = models.CharField(max_length=20)
+    # s_size = models.CharField(max_length=20)
     s_price = models.IntegerField(default=0)
     s_ForeignKey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -42,7 +42,7 @@ class Shirt(models.Model):
 class Pants(models.Model):
     pant_title = models.CharField(max_length=200)
     pant_picture = models.ImageField(upload_to="media/images/", null=True, blank=True)
-    pant_size = models.CharField(max_length=20)
+    # pant_size = models.CharField(max_length=20)
     pant_price = models.IntegerField(default=0)
     pant_ForeignKey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -54,7 +54,7 @@ class Pants(models.Model):
 class ShoesMen(models.Model):
     sm_title = models.CharField(max_length=200)
     sm_picture = models.ImageField(upload_to="media/images/", null=True, blank=True)
-    sm_size = models.CharField(max_length=20)
+    # sm_size = models.CharField(max_length=20)
     sm_price = models.IntegerField(default=0)
     sm_ForeignKey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -68,7 +68,7 @@ class ShoesMen(models.Model):
 class Dress(models.Model):
     dress_title = models.CharField(max_length=200)
     dress_picture = models.ImageField(upload_to="media/images/", null=True, blank=True)
-    dress_size = models.CharField(max_length=20)
+    # dress_size = models.CharField(max_length=20)
     dress_price = models.IntegerField(default=0)
     dress_ForeignKey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -80,7 +80,7 @@ class Dress(models.Model):
 class BagJewel(models.Model):
     bj_title = models.CharField(max_length=200)
     bj_picture = models.ImageField(upload_to="media/images/", null=True, blank=True)
-    bj_size = models.CharField(max_length=20)
+    # bj_size = models.CharField(max_length=20)
     bj_price = models.IntegerField(default=0)
     bj_ForeignKey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -92,7 +92,7 @@ class BagJewel(models.Model):
 class ShoesWomen(models.Model):
     sw_title = models.CharField(max_length=200)
     sw_picture = models.ImageField(upload_to="media/images/", null=True, blank=True)
-    sw_size = models.CharField(max_length=20)
+    # sw_size = models.CharField(max_length=20)
     sw_price = models.IntegerField(default=0)
     sw_ForeignKey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 
