@@ -38,8 +38,8 @@ urlpatterns = [
     path('shoesmen/', views.shoesmen, name='shoesmen'),
     path('newshoesmen/', views.newshoesmen, name='newshoesmen'),
     path('yourshoesmen/', views.yourshoesmen, name='yourshoesmen'),
-    path('editshoesmen/<int:shoes_id>/', views.editshoesmen, name='editshoesmen'),
-    path('deleteshoesmen/<int:deleteshoes_id>/', views.deleteshoesmen, name='deleteshoesmen'),
+    path('editshoesmen/<int:smen_id>/', views.editshoesmen, name='editshoesmen'),
+    path('deleteshoesmen/<int:deletesmen_id>/', views.deleteshoesmen, name='deleteshoesmen'),
     #####################################################################
 
     # ROUTES FOR WOMEN

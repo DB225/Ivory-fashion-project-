@@ -2,7 +2,9 @@
 
 {% block content %}
 <h2>Edit T-Shirt</h2>
-<p>FORM</p>
-<p>content t-shirt men</p>
-<p>content t-shirt men</p>
+<form method="post">
+    {% csrf_token %}
+    {{ editedTshirt.as_p }}
+    <button>UPDATE</button>
+</form>
 {% endblock %}

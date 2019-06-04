@@ -2,7 +2,9 @@
 
 {% block content %}
 <h2>Edit Shoes Men</h2>
-<p>FORM</p>
-<p>content shoes men</p>
-<p>content shoes men</p>
+<form method="post">
+    {% csrf_token %}
+    {{ editedSm.as_p }}
+    <button>UPDATE</button>
+</form>
 {% endblock %}

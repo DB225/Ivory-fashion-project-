@@ -64,13 +64,22 @@ def yourtshirt(request):
 
 
 # edit T-Shirt
-def edittshirt(request):
-    return render(request, 'ivoryApp/edititem/editTshirt.html')
+def edittshirt(request, ts_id):
+    edit_tshirt = get_object_or_404(Tshirt, pk=ts_id)
+    editedTshirt = TshirtForm(request.POST or None, instance=edit_tshirt)
+    if editedTshirt.is_valid():
+        editedTshirt.save()
+        return redirect('tshirtmen')
+    return render(request, 'ivoryApp/edititem/editTshirt.html', {'editedTshirt': editedTshirt})
 
 
 # delete T-Shirt
-def deletetshirt(request):
-    return render(request, 'ivoryApp/deleteitem/deleteTshirt.html')
+def deletetshirt(request, deletets_id):
+    delete_tshirt = get_object_or_404(Tshirt, pk=deletets_id)
+    if request.method == 'POST':
+        delete_tshirt.delete()
+        redirect('tshirtmen')
+    return render(request, 'ivoryApp/deleteitem/deleteTshirt.html', {'delete_tshirt': delete_tshirt})
 
 ############################################
 
@@ -114,13 +123,22 @@ def yourshirt(request):
 
 
 # edit shirt
-def editshirt(request):
-    return render(request, 'ivoryApp/edititem/editShirt.html')
+def editshirt(request, s_id):
+    edit_shirt = get_object_or_404(Shirt, pk=s_id)
+    editedShirt = ShirtForm(request.POST or None, instance=edit_shirt)
+    if editedShirt.is_valid():
+        editedShirt.save()
+        return redirect('shirtmen')
+    return render(request, 'ivoryApp/edititem/editShirt.html', {'editedShirt': editedShirt})
 
 
 # delete shirt
-def deleteshirt(request):
-    return render(request, 'ivoryApp/deleteitem/deleteShirt.html')
+def deleteshirt(request, deletesh_id):
+    delete_shirt = get_object_or_404(Shirt, pk=deletesh_id)
+    if request.method == 'POST':
+        delete_shirt.delete()
+        redirect('shirtmen')
+    return render(request, 'ivoryApp/deleteitem/deleteShirt.html', {'delete_shirt': delete_shirt})
 
 ############################################
 
@@ -133,7 +151,7 @@ def pantsmen(request):
 
 # new pants
 def newpants(request):
-    new_pant = TshirtForm(request.POST or None)
+    new_pant = PantsForm(request.POST or None)
     print(request.POST)
 
     if request.method == 'POST' or new_pant.is_valid():
@@ -164,13 +182,22 @@ def yourpant(request):
 
 
 # edit pants
-def editpants(request):
-    return render(request, 'ivoryApp/edititem/editpants.html')
+def editpants(request, p_id):
+    edit_pant = get_object_or_404(Pants, pk=p_id)
+    editedPant = PantsForm(request.POST or None, instance=edit_pant)
+    if editedPant.is_valid():
+        editedPant.save()
+        return redirect('pantsmen')
+    return render(request, 'ivoryApp/edititem/editpants.html', {'editedPant': editedPant})
 
 
 # delete pants
-def deletepants(request):
-    return render(request, 'ivoryApp/deleteitem/deletepants.html')
+def deletepants(request, deletep_id):
+    delete_pant = get_object_or_404(Pants, pk=deletep_id)
+    if request.method == 'POST':
+        delete_pant.delete()
+        redirect('pantsmen')
+    return render(request, 'ivoryApp/deleteitem/deletepants.html', {'delete_pant': delete_pant})
 
 ############################################
 
@@ -214,13 +241,22 @@ def yourshoesmen(request):
 
 
 # edit men shoes
-def editshoesmen(request):
-    return render(request, 'ivoryApp/edititem/editshoesmen.html')
+def editshoesmen(request, smen_id):
+    edit_sm = get_object_or_404(ShoesMen, pk=smen_id)
+    editedSm = ShoesMenForm(request.POST or None, instance=edit_sm)
+    if editedSm.is_valid():
+        editedSm.save()
+        return redirect('shoesmen')
+    return render(request, 'ivoryApp/edititem/editshoesmen.html', {'editedSm': editedSm})
 
 
 # delete men shoes
-def deleteshoesmen(request):
-    return render(request, 'ivoryApp/deleteitem/deleteshoesmen.html')
+def deleteshoesmen(request, deletesmen_id):
+    delete_sm = get_object_or_404(ShoesMen, pk=deletesmen_id)
+    if request.method == 'POST':
+        delete_sm.delete()
+        redirect('shoesmen')
+    return render(request, 'ivoryApp/deleteitem/deleteshoesmen.html', {'delete_sm': delete_sm})
 
 ####################################################################################
 ####################################################################################
@@ -244,7 +280,7 @@ def newdress(request):
     print(request.POST)
 
     if request.method == 'POST' or new_dress.is_valid():
-        new_dress = ShoesMenForm(request.POST, request.FILES)
+        new_dress = DressForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
         Dress.objects.create(dress_title=request.POST["dress_title"], dress_size=request.POST["dress_size"],
                              dress_picture=request.FILES["dress_picture"], dress_price=request.POST["dress_price"],
@@ -271,13 +307,22 @@ def yourdress(request):
 
 
 # edit dress
-def editdress(request):
-    return render(request, 'ivoryApp/edititem/editdress.html')
+def editdress(request, dr_id):
+    edit_dress = get_object_or_404(Dress, pk=dr_id)
+    editedDress = DressForm(request.POST or None, instance=edit_dress)
+    if editedDress.is_valid():
+        editedDress.save()
+        return redirect('dress')
+    return render(request, 'ivoryApp/edititem/editdress.html', {'editedDress': editedDress})
 
 
 # delete dress
-def deletedress(request):
-    return render(request, 'ivoryApp/deleteitem/deletedress.html')
+def deletedress(request, deletedr_id):
+    delete_dress = get_object_or_404(Dress, pk=deletedr_id)
+    if request.method == 'POST':
+        delete_dress.delete()
+        redirect('dress')
+    return render(request, 'ivoryApp/deleteitem/deletedress.html', {'delete_dress': delete_dress})
 
 ############################################
 
@@ -321,13 +366,22 @@ def yourbagjewel(request):
 
 
 # edit accessory
-def editbagjewel(request):
-    return render(request, 'ivoryApp/edititem/editbagjewel.html')
+def editbagjewel(request, acc_id):
+    edit_acc = get_object_or_404(BagJewel, pk=acc_id)
+    editedAcc = BagJewelForm(request.POST or None, instance=edit_acc)
+    if editedAcc.is_valid():
+        editedAcc.save()
+        return redirect('bagjewel')
+    return render(request, 'ivoryApp/edititem/editbagjewel.html', {'editedAcc': editedAcc})
 
 
 # delete accessory
-def deletebagjewel(request):
-    return render(request, 'ivoryApp/deleteitem/deletebagjewel.html')
+def deletebagjewel(request, deleteacc_id):
+    delete_acc = get_object_or_404(BagJewel, pk=deleteacc_id)
+    if request.method == 'POST':
+        delete_acc.delete()
+        redirect('bagjewel')
+    return render(request, 'ivoryApp/deleteitem/deletebagjewel.html', {'delete_acc': delete_acc})
 
 ############################################
 
@@ -371,13 +425,22 @@ def yourshoeswomen(request):
 
 
 # edit women shoes
-def editshoeswomen(request):
-    return render(request, 'ivoryApp/edititem/editshoeswomen.html')
+def editshoeswomen(request, swomen_id):
+    edit_sw = get_object_or_404(ShoesWomen, pk=swomen_id)
+    editedSw = ShoesWomenForm(request.POST or None, instance=edit_sw)
+    if editedSw.is_valid():
+        editedSw.save()
+        return redirect('shoeswomen')
+    return render(request, 'ivoryApp/edititem/editshoeswomen.html', {'editedSw': editedSw})
 
 
 # delete women shoes
-def deleteshoeswomen(request):
-    return render(request, 'ivoryApp/deleteitem/deleteshoeswomen.html')
+def deleteshoeswomen(request, deleteswomen_id):
+    delete_sw = get_object_or_404(ShoesWomen, pk=deleteswomen_id)
+    if request.method == 'POST':
+        delete_sw.delete()
+        redirect('shoeswomen')
+    return render(request, 'ivoryApp/deleteitem/deleteshoeswomen.html', {'delete_sw': delete_sw})
 #################################################################################
 #################################################################################
 
