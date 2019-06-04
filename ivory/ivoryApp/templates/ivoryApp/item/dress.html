@@ -28,10 +28,6 @@
 
 
 <h5>Price : {{ eachdress.dress_price }} $</h5>
-{% if user.is_authenticated %}
-<a href="{% url 'editdress' eachdress.id %}">Edit</a>
-<a href="{% url 'deletedress' eachdress.id %}">Delete</a> <br> <br>
-{% endif %}
 {% endfor %}
 {% endif %}
 {% endblock %}

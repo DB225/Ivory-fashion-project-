@@ -11,7 +11,6 @@
 <h5>
     <img src="{{eachBj.bj_picture.url}}" alt="image item">
 </h5>
-
 <ul> Size :
     {% for choice in form.bj_size.field.choices %}
     <li>
@@ -25,12 +24,7 @@
     </li>
     {% endfor %}
 </ul>
-
 <h5>Price : {{ eachBj.bj_price }} $</h5>
-{% if user.is_authenticated %}
-<a href="{% url 'editbagjewel' eachBj.id %}">Edit</a>
-<a href="{% url 'deletebagjewel' eachBj.id %}">Delete</a> <br> <br>
-{% endif %}
 {% endfor %}
 {% endif %}
 {% endblock %}
