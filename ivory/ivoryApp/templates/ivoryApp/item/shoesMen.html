@@ -16,27 +16,44 @@
     {% endif %}
     {% if allShoesMen %}
     {% for eachsm in allShoesMen %}
+    <div class="card" style="width: 22.8rem;">
+        <img src="{{eachsm.sm_picture.url}}" class="card-img-top" alt="image item">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachsm.sm_title }}</h5>
+            <h5>
+                Size :
+                {% for choice in form.sm_size.field.choices %}
+                <input type="radio" name="sm_size" value="{{choice.0}}"
+                       {% ifequal form.sm_size.data choice.0 %}
+                       checked="checked"
+                       {% endifequal %}/>
+                <label class="">{{choice.1}}</label>
+                {% endfor %}
+            </h5>
+            <h5>Price : {{ eachsm.sm_price }} $</h5>
+            <a href="#" class="btn btn-outline-danger">Add to cart</a>
+        </div>
+    </div>
+<!--    <h5>{{ eachsm.sm_title }}</h5>-->
+<!--    <h5>-->
+<!--        <img src="{{eachsm.sm_picture.url}}" alt="image item">-->
+<!--    </h5>-->
 
-    <h5>{{ eachsm.sm_title }}</h5>
-    <h5>
-        <img src="{{eachsm.sm_picture.url}}" alt="image item">
-    </h5>
+<!--    <ul> Size :-->
+<!--        {% for choice in form.sm_size.field.choices %}-->
+<!--        <li>-->
+<!--            <input type="radio" name="sm_size" value="{{choice.0}}"-->
+<!--                   {% ifequal form.sm_size.data choice.0 %}-->
+<!--                   checked="checked"-->
+<!--                   {% endifequal %}/>-->
+<!--            <label>-->
+<!--                {{choice.1}}-->
+<!--            </label>-->
+<!--        </li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
 
-    <ul> Size :
-        {% for choice in form.sm_size.field.choices %}
-        <li>
-            <input type="radio" name="sm_size" value="{{choice.0}}"
-                   {% ifequal form.sm_size.data choice.0 %}
-                   checked="checked"
-                   {% endifequal %}/>
-            <label>
-                {{choice.1}}
-            </label>
-        </li>
-        {% endfor %}
-    </ul>
-
-    <h5>Price : {{ eachsm.sm_price }} $</h5>
+<!--    <h5>Price : {{ eachsm.sm_price }} $</h5>-->
     {% endfor %}
     {% endif %}
 </aside>

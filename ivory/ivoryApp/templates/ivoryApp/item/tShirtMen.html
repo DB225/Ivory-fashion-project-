@@ -16,25 +16,41 @@
     {% endif %}
     {% if allTshirts %}
     {% for eachTsh in allTshirts %}
-    <h5>{{ eachTsh.ts_title }}</h5>
-    <h5>
-        <img src="{{eachTsh.ts_picture.url}}" alt="image item">
-    </h5>
-    <ul> Size :
-        {% for choice in form.ts_size.field.choices %}
-        <li>
-            <input type="radio" name="ts_size" value="{{choice.0}}"
-                   {% ifequal form.ts_size.data choice.0 %}
-                   checked="checked"
-                   {% endifequal %}/>
-            <label>
-                {{choice.1}}
-            </label>
-        </li>
-        {% endfor %}
-    </ul>
-    <!--<h5>Size : {{ eachTsh.ts_size }}</h5>-->
-    <h5>Price : {{ eachTsh.ts_price }} $</h5>
+    <div class="card" style="width: 22.8rem;">
+        <img src="{{eachTsh.ts_picture.url}}" class="card-img-top" alt="image item">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachTsh.ts_title }}</h5>
+            <h5>
+                Size :
+                {% for choice in form.ts_size.field.choices %}
+                <input type="radio" name="ts_size" value="{{choice.0}}"
+                       {% ifequal form.ts_size.data choice.0 %}
+                       checked="checked"
+                       {% endifequal %}/>
+                <label class="">{{choice.1}}</label>
+                {% endfor %}
+            </h5>
+            <h5>Price : {{ eachTsh.ts_price }} $</h5>
+            <a href="#" class="btn btn-outline-danger">Add to cart</a>
+        </div>
+    </div>
+<!--    <h5>{{ eachTsh.ts_title }}</h5>-->
+<!--    <h5>-->
+<!--        <img src="{{eachTsh.ts_picture.url}}" alt="image item">-->
+<!--    </h5>-->
+<!--    <h5> Size :-->
+<!--        {% for choice in form.ts_size.field.choices %}-->
+<!--            <input type="radio" name="ts_size" value="{{choice.0}}"-->
+<!--                   {% ifequal form.ts_size.data choice.0 %}-->
+<!--                   checked="checked"-->
+<!--                   {% endifequal %}/>-->
+<!--            <label>-->
+<!--                {{choice.1}}-->
+<!--            </label>-->
+<!--        {% endfor %}-->
+<!--    </h5>-->
+<!--    &lt;!&ndash;<h5>Size : {{ eachTsh.ts_size }}</h5>&ndash;&gt;-->
+<!--    <h5>Price : {{ eachTsh.ts_price }} $</h5>-->
     {% endfor %}
     {% endif %}
 </aside>

@@ -1,30 +1,31 @@
 {% extends 'ivoryApp/base.html' %}
 
 {% block content %}
-
-{{% if research_dress %}
-{% for eachdress in research_dress %}
-<h5>{{eachdress.dress_title}}</h5>
-<h5>
-    <img src="{{eachdress.dress_picture.url}}" alt="image item">
-</h5>
-<ul> Size :
-    {% for choice in form.dress_size.field.choices %}
-    <li>
-        <input type="radio" name="dress_size" value="{{choice.0}}"
-               {% ifequal form.dress_size.data choice.0 %}
-               checked="checked"
-               {% endifequal %}/>
-        <label>
-            {{choice.1}}
-        </label>
-    </li>
+<aside>
+    {{% if research_dress %}
+    {% for eachdress in research_dress %}
+    <h5>{{eachdress.dress_title}}</h5>
+    <h5>
+        <img src="{{eachdress.dress_picture.url}}" alt="image item">
+    </h5>
+    <ul> Size :
+        {% for choice in form.dress_size.field.choices %}
+        <li>
+            <input type="radio" name="dress_size" value="{{choice.0}}"
+                   {% ifequal form.dress_size.data choice.0 %}
+                   checked="checked"
+                   {% endifequal %}/>
+            <label>
+                {{choice.1}}
+            </label>
+        </li>
+        {% endfor %}
+    </ul>
+    <h5>Price : {{ eachdress.dress_price }} $</h5>
     {% endfor %}
-</ul>
-<h5>Price : {{ eachdress.dress_price }} $</h5>
-{% endfor %}
-{% else %}
-<h3>No such information</h3> <br>
-<a href="{% url 'dress' %}">&#10237; BACK</a>
-{% endif %}
+    {% else %}
+    <h3>No such information</h3> <br>
+    <a href="{% url 'dress' %}">&#10237; BACK</a>
+    {% endif %}
+</aside>
 {% endblock %}

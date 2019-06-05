@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>index</title>
     {% load static %}
+    <link rel="stylesheet" href="../../static/ivoryApp/css/bootstrap.css">
     <link rel="stylesheet" href="{% static 'ivoryApp/css/base.css' %}">
+    <script src="../../static/ivoryApp/js/bootstrap.js"></script>
 </head>
 <body>
 <div class="containerGrid">
@@ -12,7 +14,7 @@
 {% if user.is_authenticated %}
 
 <nav>
-    <h1>IVORY</h1>
+    <h1 class="display-1">IVORY</h1>
     <ul>
         <li>{{ user.get_username }}</li>
         <li>
@@ -35,7 +37,7 @@
 
 {% else %}
 <nav>
-    <h1>IVORY</h1>
+    <h1 class="display-1">IVORY</h1>
     <ul>
         <li>GUEST</li>
         <li>
