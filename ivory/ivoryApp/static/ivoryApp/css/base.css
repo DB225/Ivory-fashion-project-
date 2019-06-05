@@ -14,9 +14,10 @@ a{
     text-decoration: none;
 }
 
+
 /*Hovering effect for the links*/
 a:hover{
-    color: darkgreen;
+    color: rgba(0, 187, 0, 0.83);
 }
 
 /*Style for the buttons*/
