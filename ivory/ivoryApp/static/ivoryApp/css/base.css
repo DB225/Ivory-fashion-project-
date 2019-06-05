@@ -2,3 +2,34 @@ img{
     width: 350px;
     height: 330px;
 }
+
+body{
+    margin: 1.5px 15px;
+}
+
+/*Style for the links*/
+a{
+    color: darkgreen;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/*Hovering effect for the links*/
+a:hover{
+    color: darkgreen;
+}
+
+/*Style for the buttons*/
+button, input[type=submit]{
+    border-radius: 10px;
+    background-color: rgba(21, 119, 43, 0.73);
+    color: white;
+    height: 45px;
+    width: 110px;
+}
+
+/*Hovering effect for the buttons*/
+button:hover, input[type=submit]:hover{
+    background: #0b2e13;
+}
+

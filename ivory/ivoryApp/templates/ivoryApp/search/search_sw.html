@@ -1,19 +1,9 @@
-{% extends 'ivoryApp/women.html' %}
+{% extends 'ivoryApp/base.html' %}
 
 {% block content %}
-<h2>Shoes Women</h2>
-<form action="{% url 'search_sw' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="mySearch" placeholder="Search Term(s)" aria-label="Search" >
-    <button type="submit">Search</button>
-</form>
-{% if user.is_authenticated %}
-<a href="{% url 'yourshoeswomen' %}">My Shoes Women</a>
-{% endif %}
-{% if allShoesWomen %}
-{% for eachsw in allShoesWomen %}
-
-<h5>{{ eachsw.sw_title }}</h5>
+{% if research_sw %}
+{% for eachsw in research_sw %}
+<h5>{{eachsw.sw_title}}</h5>
 <h5>
     <img src="{{eachsw.sw_picture.url}}" alt="image item">
 </h5>
@@ -32,5 +22,8 @@
 </ul>
 <h5>Price : {{ eachsw.sw_price }} $</h5>
 {% endfor %}
+{% else %}
+<h3>No such information</h3> <br>
+<a href="{% url 'shoeswomen' %}">&#10237; BACK</a>
 {% endif %}
 {% endblock %}

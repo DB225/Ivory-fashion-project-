@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import *
 from django.contrib.auth.models import User
+from django.db.models import Q
 
 
 # Create your views here.
@@ -454,3 +455,57 @@ def deleteshoeswomen(request, deleteswomen_id):
 # Cart
 def shoppingCart(request):
     return render(request, 'ivoryApp/shoppingCart.html')
+
+
+# find informations through the search bar
+def search_ts(request):
+    form = MyForm()
+    makeSearch = request.POST['mySearch']
+    research_ts = Tshirt.objects.filter(Q(ts_title__startswith=makeSearch))
+    context = {
+        'research_ts': research_ts,
+        'form': form
+    }
+    return render(request, 'ivoryApp/search/search_ts.html', context)
+
+
+def search_s(request):
+    form = MyForm()
+    makeSearch = request.POST['mySearch']
+    research_s = Shirt.objects.filter(Q(s_title__startswith=makeSearch))
+    return render(request, 'ivoryApp/search/search_s.html', {'research_s': research_s, 'form': form})
+
+
+def search_pant(request):
+    form = MyForm()
+    makeSearch = request.POST['mySearch']
+    research_pant = Pants.objects.filter(Q(pant_title__startswith=makeSearch))
+    return render(request, 'ivoryApp/search/search_pant.html', {'research_pant': research_pant, 'form': form})
+
+
+def search_sm(request):
+    form = MyForm()
+    makeSearch = request.POST['mySearch']
+    research_sm = ShoesMen.objects.filter(Q(sm_title__startswith=makeSearch))
+    return render(request, 'ivoryApp/search/search_sm.html', {'research_sm': research_sm, 'form': form})
+
+
+def search_dress(request):
+    form = MyForm()
+    makeSearch = request.POST['mySearch']
+    research_dress = Dress.objects.filter(Q(dress_title__startswith=makeSearch))
+    return render(request, 'ivoryApp/search/search_dress.html', {'research_dress': research_dress, 'form': form})
+
+
+def search_bj(request):
+    form = MyForm()
+    makeSearch = request.POST['mySearch']
+    research_bj = BagJewel.objects.filter(Q(bj_title__startswith=makeSearch))
+    return render(request, 'ivoryApp/search/search_bj.html', {'research_bj': research_bj, 'form': form})
+
+
+def search_sw(request):
+    form = MyForm()
+    makeSearch = request.POST['mySearch']
+    research_sw = ShoesWomen.objects.filter(Q(sw_title__startswith=makeSearch))
+    return render(request, 'ivoryApp/search/search_sw.html', {'research_sw': research_sw, 'form': form})

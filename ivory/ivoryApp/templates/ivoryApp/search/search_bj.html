@@ -1,0 +1,30 @@
+{% extends 'ivoryApp/base.html' %}
+
+{% block content %}
+
+{% if research_bj %}
+{% for eachbj in research_bj %}
+<h5>{{eachbj.bj_title}}</h5>
+<h5>
+    <img src="{{eachbj.bj_picture.url}}" alt="image item">
+</h5>
+<ul> Size :
+    {% for choice in form.bj_size.field.choices %}
+    <li>
+        <input type="radio" name="bj_size" value="{{choice.0}}"
+               {% ifequal form.bj_size.data choice.0 %}
+               checked="checked"
+               {% endifequal %}/>
+        <label>
+            {{choice.1}}
+        </label>
+    </li>
+    {% endfor %}
+</ul>
+<h5>Price : {{ eachbj.bj_price }} $</h5>
+{% endfor %}
+{% else %}
+<h3>No such information</h3> <br>
+<a href="{% url 'bagjewel' %}">&#10237; BACK</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'ivoryApp/base.html' %}
+
+{% block content %}
+{% if research_pant %}
+{% for eachpant in research_pant %}
+<h5>{{eachpant.pant_title}}</h5>
+<h5>
+    <img src="{{eachpant.pant_picture.url}}" alt="image item">
+</h5>
+<ul> Size :
+    {% for choice in form.pant_size.field.choices %}
+    <li>
+        <input type="radio" name="pant_size" value="{{choice.0}}"
+               {% ifequal form.pant_size.data choice.0 %}
+               checked="checked"
+               {% endifequal %}/>
+        <label>
+            {{choice.1}}
+        </label>
+    </li>
+    {% endfor %}
+</ul>
+<h5>Price : {{ eachpant.pant_price }} $</h5>
+{% endfor %}
+{% else %}
+<h3>No such information</h3> <br>
+<a href="{% url 'pantsmen' %}">&#10237; BACK</a>
+{% endif %}
+{% endblock %}

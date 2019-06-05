@@ -69,6 +69,15 @@ urlpatterns = [
     # Cart
     path('shoppingCart/', views.shoppingCart, name='shoppingCart'),
 
+    # the pages of the result of search via the search bar
+    path('search_ts/', views.search_ts, name="search_ts"),
+    path('search_s/', views.search_s, name="search_s"),
+    path('search_pant/', views.search_pant, name="search_pant"),
+    path('search_sm/', views.search_sm, name="search_sm"),
+    path('search_dress/', views.search_dress, name="search_dress"),
+    path('search_bj/', views.search_bj, name="search_bj"),
+    path('search_sw/', views.search_sw, name="search_sw"),
+
     # the path for the images
     path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT, }),
 ]

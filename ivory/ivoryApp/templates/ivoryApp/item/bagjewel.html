@@ -2,6 +2,11 @@
 
 {% block content %}
 <h2>Accessories</h2>
+<form action="{% url 'search_bj' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="mySearch" placeholder="Search Term(s)" aria-label="Search" >
+    <button type="submit">Search</button>
+</form>
 {% if user.is_authenticated %}
 <a href="{% url 'yourbagjewel' %}">My Accessories</a>
 {% endif %}
