@@ -33,3 +33,53 @@ button, input[type=submit]{
 button:hover, input[type=submit]:hover{
     background: #0b2e13;
 }
+
+.containerGrid{
+    display: grid;
+    grid-template-columns:  repeat(4, 1fr);
+    grid-gap: 15px;
+    grid-template-areas:
+            "nav nav nav nav"
+            ". . header header"
+            "section section aside aside"
+            "footer footer footer footer";
+}
+
+/*Display of the navBar*/
+nav{
+    grid-area: nav;
+    height:100px;
+}
+
+header{
+    grid-area: header;
+}
+
+/*Display of the content of the body*/
+section{
+    grid-area: section;
+    padding: 20px;
+}
+
+aside{
+    grid-area: aside;
+}
+
+
+/*Display of the footer*/
+.footer{
+    grid-area: footer;
+    text-align: center;
+    height: 100px;
+    background: rgba(0, 33, 0, 0.34);
+    border-radius: 10px;
+}
+
+.distance{
+    position: relative;
+    margin-top: 3%;
+}
+
+input[type=radio]{
+    list-style-type: none;
+}

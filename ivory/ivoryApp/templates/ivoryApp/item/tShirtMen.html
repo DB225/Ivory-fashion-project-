@@ -1,36 +1,41 @@
 {% extends 'ivoryApp/men.html' %}
 
 {% block content %}
-<h2>T-Shirts</h2>
-<form action="{% url 'search_ts' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="mySearch" placeholder="Search Term(s)" aria-label="Search" >
-    <button type="submit">Search</button>
-</form>
-{% if user.is_authenticated %}
-<a href="{% url 'yourtshirt' %}">My T-Shirts</a>
-{% endif %}
-{% if allTshirts %}
-{% for eachTsh in allTshirts %}
-<h5>{{ eachTsh.ts_title }}</h5>
-<h5>
-    <img src="{{eachTsh.ts_picture.url}}" alt="image item">
-</h5>
-<ul> Size :
-    {% for choice in form.ts_size.field.choices %}
-    <li>
-        <input type="radio" name="ts_size" value="{{choice.0}}"
-               {% ifequal form.ts_size.data choice.0 %}
-               checked="checked"
-               {% endifequal %}/>
-        <label>
-            {{choice.1}}
-        </label>
-    </li>
+<header>
+    <h2>T-Shirts</h2>
+    <form action="{% url 'search_ts' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="mySearch" placeholder="Search Term(s)" aria-label="Search" >
+        <button type="submit">Search</button>
+    </form>
+</header>
+
+<aside>
+    {% if user.is_authenticated %}
+    <a href="{% url 'yourtshirt' %}">My T-Shirts</a>
+    {% endif %}
+    {% if allTshirts %}
+    {% for eachTsh in allTshirts %}
+    <h5>{{ eachTsh.ts_title }}</h5>
+    <h5>
+        <img src="{{eachTsh.ts_picture.url}}" alt="image item">
+    </h5>
+    <ul> Size :
+        {% for choice in form.ts_size.field.choices %}
+        <li>
+            <input type="radio" name="ts_size" value="{{choice.0}}"
+                   {% ifequal form.ts_size.data choice.0 %}
+                   checked="checked"
+                   {% endifequal %}/>
+            <label>
+                {{choice.1}}
+            </label>
+        </li>
+        {% endfor %}
+    </ul>
+    <!--<h5>Size : {{ eachTsh.ts_size }}</h5>-->
+    <h5>Price : {{ eachTsh.ts_price }} $</h5>
     {% endfor %}
-</ul>
-<!--<h5>Size : {{ eachTsh.ts_size }}</h5>-->
-<h5>Price : {{ eachTsh.ts_price }} $</h5>
-{% endfor %}
-{% endif %}
+    {% endif %}
+</aside>
 {% endblock %}

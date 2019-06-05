@@ -1,13 +1,16 @@
 {% extends 'ivoryApp/women.html' %}
 
 {% block content %}
-<h2>Delete Accessory</h2>
-<p>Do you really want to delete?</p>
-<form method="post">
-    {%csrf_token %}
-    <button>YES</button>
-</form>
-<a href="{% url 'bagjewel' %}">
-    <button>NO</button>
-</a>
+<aside>
+    <h2>Delete Accessory</h2>
+    <p>Do you really want to delete?</p>
+    <form method="post">
+        {%csrf_token %}
+        <button>YES</button>
+    </form>
+    <a href="{% url 'bagjewel' %}">
+        <button>NO</button>
+    </a>
+</aside>
+
 {% endblock %}

@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="{% static 'ivoryApp/css/men.css' %}">
 </head>
 <body>
+<div class="containerGrid">
 {% block header %}
-
-
 {% if user.is_authenticated %}
-<h1>IVORY</h1>
+
 <nav>
+    <h1>IVORY</h1>
     <ul>
         <li>{{ user.get_username }}</li>
         <li>
@@ -34,8 +34,8 @@
 </nav>
 
 {% else %}
-<h1>IVORY</h1>
 <nav>
+    <h1>IVORY</h1>
     <ul>
         <li>GUEST</li>
         <li>
@@ -60,21 +60,26 @@
 </nav>
 {% endif %}
 {% endblock %}
-<h4>MEN'S COLLECTION</h4>
-<ul>
-    <li>
-        <a href="{% url 'tshirtmen' %}">T-Shirt</a>
-    </li>
-    <li>
-        <a href="{% url 'shirtmen' %}">Shirt</a>
-    </li>
-    <li>
-        <a href="{% url 'pantsmen' %}">Pants</a>
-    </li>
-    <li>
-        <a href="{% url 'shoesmen' %}">Shoes</a>
-    </li>
-</ul>
+
+
+<section class="distance">
+    <h4>MEN'S COLLECTION</h4>
+    <ul>
+        <li>
+            <a href="{% url 'tshirtmen' %}">T-Shirt</a>
+        </li>
+        <li>
+            <a href="{% url 'shirtmen' %}">Shirt</a>
+        </li>
+        <li>
+            <a href="{% url 'pantsmen' %}">Pants</a>
+        </li>
+        <li>
+            <a href="{% url 'shoesmen' %}">Shoes</a>
+        </li>
+    </ul>
+</section>
+
 
 {% block content %}
 
@@ -86,5 +91,6 @@
     <p>&copy; Copyright {% now 'Y' %}</p>
 </div>
 {% endblock %}
+</div>
 </body>
 </html>

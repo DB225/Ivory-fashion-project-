@@ -1,10 +1,13 @@
 {% extends 'ivoryApp/women.html' %}
 
 {% block content %}
-<h2>Edit Accessory</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ editedAcc.as_p }}
-    <button>UPDATE</button>
-</form>
+<aside>
+    <h2>Edit Accessory</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ editedAcc.as_p }}
+        <button>UPDATE</button>
+    </form>
+</aside>
+
 {% endblock %}

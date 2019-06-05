@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="{% static 'ivoryApp/css/base.css' %}">
 </head>
 <body>
+<div class="containerGrid">
 {% block header %}
-
 {% if user.is_authenticated %}
-<h1>IVORY</h1>
+
 <nav>
+    <h1>IVORY</h1>
     <ul>
         <li>{{ user.get_username }}</li>
         <li>
@@ -33,8 +34,8 @@
 </nav>
 
 {% else %}
-<h1>IVORY</h1>
 <nav>
+    <h1>IVORY</h1>
     <ul>
         <li>GUEST</li>
         <li>
@@ -69,5 +70,6 @@
     <p>&copy; Copyright {% now 'Y' %}</p>
 </div>
 {% endblock %}
+</div>
 </body>
 </html>

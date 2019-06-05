@@ -1,10 +1,13 @@
 {% extends 'ivoryApp/men.html' %}
 
 {% block content %}
-<h2>Edit T-Shirt</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ editedTshirt.as_p }}
-    <button>UPDATE</button>
-</form>
+<aside>
+    <h2>Edit T-Shirt</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ editedTshirt.as_p }}
+        <button>UPDATE</button>
+    </form>
+</aside>
+
 {% endblock %}

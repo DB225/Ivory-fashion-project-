@@ -1,7 +1,11 @@
 {% extends "ivoryApp/base.html" %}
 
 {% block content %}
+<section>
     <h2>LOG IN</h2>
+</section>
+
+<aside>
     {% if form.errors %}
     <p>Your username and password didn't match |_(-_-)_| . Please try again.</p>
     {% endif %}
@@ -33,4 +37,6 @@
         <input type="submit" value="LOGIN"/>
         <input type="hidden" name="next" value="{{ next }}"/>
     </form>
+</aside>
+
 {% endblock %}

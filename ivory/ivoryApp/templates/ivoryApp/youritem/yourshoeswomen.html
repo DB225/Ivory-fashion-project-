@@ -1,18 +1,21 @@
 {% extends 'ivoryApp/women.html' %}
 
 {% block content %}
-<h4>My Shoes Women</h4>
-{% if user.is_authenticated %}
-<a href="{% url 'newshoeswomen' %}">Add Shoes Women</a>
-{% for eachsw in personalShoesWomen %}
-<h5>{{ eachsw.sw_title }}</h5>
+<aside>
+    <h4>My Shoes Women</h4>
+    <a href="{% url 'shoeswomen' %}">BACK</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'newshoeswomen' %}">Add Shoes Women</a>
+    {% for eachsw in personalShoesWomen %}
+    <h5>{{ eachsw.sw_title }}</h5>
     <img src="{{ eachsw.sw_picture.url }}" alt="image item">
-<h5>Price : {{ eachsw.sw_price }} $</h5>
-<a href="{% url 'editshoeswomen' eachsw.id %}">Edit</a>
-<a href="{% url 'deleteshoeswomen' eachsw.id %}">Delete</a> <br> <br>
-{% endfor %}
-{% else %}
-<h1>No Shoes Women Available</h1>
-{% endif%}
-<a href="{% url 'shoeswomen' %}">BACK</a>
+    <h5>Price : {{ eachsw.sw_price }} $</h5>
+    <a href="{% url 'editshoeswomen' eachsw.id %}">Edit</a>
+    <a href="{% url 'deleteshoeswomen' eachsw.id %}">Delete</a> <br> <br>
+    {% endfor %}
+    {% else %}
+    <h1>No Shoes Women Available</h1>
+    {% endif%}
+</aside>
+
 {% endblock %}

@@ -1,35 +1,40 @@
 {% extends 'ivoryApp/men.html' %}
 
 {% block content %}
-<h2>Pants</h2>
-<form action="{% url 'search_pant' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="mySearch" placeholder="Search Term(s)" aria-label="Search" >
-    <button type="submit">Search</button>
-</form>
-{% if user.is_authenticated %}
-<a href="{% url 'yourpant' %}">My Pants</a>
-{% endif %}
-{% if allPants %}
-{% for eachPant in allPants %}
-<h5>{{ eachPant.pant_title }}</h5>
-<h5>
-    <img src="{{eachPant.pant_picture.url}}" alt="image item">
-</h5>
+<header>
+    <h2>Pants</h2>
+    <form action="{% url 'search_pant' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="mySearch" placeholder="Search Term(s)" aria-label="Search" >
+        <button type="submit">Search</button>
+    </form>
+</header>
 
-<ul>Size :
-    {% for choice in form.pant_size.field.choices %}
-    <li>
-        <input type="radio" name="pant_size" value="{{choice.0}}"
-               {% ifequal form.pant_size.data choice.0 %}
-               checked="checked"
-               {% endifequal %}/>
-        <label>{{choice.1}}</label>
-    </li>
+<aside>
+    {% if user.is_authenticated %}
+    <a href="{% url 'yourpant' %}">My Pants</a>
+    {% endif %}
+    {% if allPants %}
+    {% for eachPant in allPants %}
+    <h5>{{ eachPant.pant_title }}</h5>
+    <h5>
+        <img src="{{eachPant.pant_picture.url}}" alt="image item">
+    </h5>
+
+    <ul>Size :
+        {% for choice in form.pant_size.field.choices %}
+        <li>
+            <input type="radio" name="pant_size" value="{{choice.0}}"
+                   {% ifequal form.pant_size.data choice.0 %}
+                   checked="checked"
+                   {% endifequal %}/>
+            <label>{{choice.1}}</label>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h5>Price : {{ eachPant.pant_price }} $</h5>
     {% endfor %}
-</ul>
-
-<h5>Price : {{ eachPant.pant_price }} $</h5>
-{% endfor %}
-{% endif %}
+    {% endif %}
+</aside>
 {% endblock %}

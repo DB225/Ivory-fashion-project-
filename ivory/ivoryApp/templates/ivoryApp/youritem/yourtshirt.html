@@ -1,19 +1,23 @@
 {% extends 'ivoryApp/men.html' %}
 
 {% block content %}
-<h4>My T-Shirts</h4>
-{% if user.is_authenticated %}
-<a href="{% url 'newtshirt' %}">Add T-Shirt</a>
-{% for eachTsh in personalTshirts %}
-<h5>{{ eachTsh.ts_title }}</h5>
+<aside>
+    <h4>My T-Shirts</h4>
+    <a href="{% url 'tshirtmen' %}">BACK</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'newtshirt' %}">Add T-Shirt</a>
+    {% for eachTsh in personalTshirts %}
+    <h5>{{ eachTsh.ts_title }}</h5>
     <img src="{{ eachTsh.ts_picture.url }}" alt="image item">
-</a>
-<h5>Price: {{ eachTsh.ts_price }} $</h5>
-<a href="{% url 'edittshirt' eachTsh.id %}">Edit</a>
-<a href="{% url 'deletetshirt' eachTsh.id %}">Delete</a> <br> <br>
-{% endfor %}
-{% else %}
-<h1>No T-Shirt Available</h1>
-{% endif%}
-<a href="{% url 'tshirtmen' %}">BACK</a>
+    </a>
+    <h5>Price: {{ eachTsh.ts_price }} $</h5>
+    <a href="{% url 'edittshirt' eachTsh.id %}">Edit</a>
+    <a href="{% url 'deletetshirt' eachTsh.id %}">Delete</a> <br> <br>
+    {% endfor %}
+    {% else %}
+    <h1>No T-Shirt Available</h1>
+    {% endif%}
+
+</aside>
+
 {% endblock %}

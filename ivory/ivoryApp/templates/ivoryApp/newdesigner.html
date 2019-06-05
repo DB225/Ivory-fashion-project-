@@ -1,11 +1,15 @@
 {% extends 'ivoryApp/base.html' %}
 
 {% block content %}
+<section>
 <h2>NEW DESIGNER</h2>
+</section>
+<aside>
 <form method="post">
     {% csrf_token %}
     {{ newprofile.as_p }}
     <button>SUBMIT</button>
 </form>
 <br>
+</aside>
 {% endblock %}

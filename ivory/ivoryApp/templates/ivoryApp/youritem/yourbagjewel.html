@@ -1,19 +1,21 @@
 {% extends 'ivoryApp/women.html' %}
 
 {% block content %}
-<h4>My Accessories</h4>
-{% if user.is_authenticated %}
-<a href="{% url 'newbagjewel' %}">Add Accessory</a>
-{% for eachbj in personalAccessories %}
-<h5>{{ eachbj.bj_title }}</h5>
+<aside>
+    <h4>My Accessories</h4>
+    <a href="{% url 'bagjewel' %}">BACK</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'newbagjewel' %}">Add Accessory</a>
+    {% for eachbj in personalAccessories %}
+    <h5>{{ eachbj.bj_title }}</h5>
     <img src="{{ eachbj.bj_picture.url }}" alt="image item">
-<h5>Price : {{ eachbj.bj_price }} $</h5>
-<a href="{% url 'editbagjewel' eachbj.id %}">Edit</a>
-<a href="{% url 'deletebagjewel' eachbj.id %}">Delete</a> <br> <br>
-{% endfor %}
+    <h5>Price : {{ eachbj.bj_price }} $</h5>
+    <a href="{% url 'editbagjewel' eachbj.id %}">Edit</a>
+    <a href="{% url 'deletebagjewel' eachbj.id %}">Delete</a> <br> <br>
+    {% endfor %}
 
-{% else %}
-<h1>No Accessory Available</h1>
-{% endif%}
-<a href="{% url 'bagjewel' %}">BACK</a>
+    {% else %}
+    <h1>No Accessory Available</h1>
+    {% endif%}
+</aside>
 {% endblock %}
