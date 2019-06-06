@@ -58,6 +58,15 @@ nav{
     grid-area: nav;
 }
 
+a.navbar-brand{
+    margin-left: 5%;
+}
+
+li.nav-item.active{
+    margin-left: 42%;
+}
+
+
 header{
     grid-area: header;
 }
@@ -81,4 +90,6 @@ aside{
     background: rgba(0, 33, 0, 0.34);
     border-radius: 10px;
 }
+
+
 

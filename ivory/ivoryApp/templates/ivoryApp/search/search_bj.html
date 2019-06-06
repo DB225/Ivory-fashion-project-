@@ -3,6 +3,7 @@
 {% block content %}
 <aside>
     {% if research_bj %}
+    <div class="miniGrid">
     {% for eachbj in research_bj %}
     <div class="card" style="width: 22.8rem;">
         <img src="{{eachbj.bj_picture.url}}" class="card-img-top" alt="image item">
@@ -12,6 +13,7 @@
         </div>
     </div>
     {% endfor %}
+    </div>
     {% else %}
     <h3>No such information</h3> <br>
     {% endif %}

@@ -37,13 +37,13 @@ button:hover, input[type=submit]:hover{
 
 .containerGrid{
     display: grid;
-    grid-template-columns:  repeat(4, 1fr);
+    grid-template-columns:  repeat(5, 1fr);
     grid-gap: 15px;
     grid-template-areas:
-            "nav nav nav nav"
+            "nav nav nav nav nav"
             /*". . header header"*/
-            "section section section aside"
-            "footer footer footer footer";
+            "section section section aside aside"
+            "footer footer footer footer footer";
 }
 
 /*Display of the navBar*/
@@ -52,6 +52,15 @@ nav{
     height:100px;
 }
 
+a.navbar-brand{
+    margin-left: 5%;
+}
+
+li.nav-item.active{
+    margin-left: 42%;
+}
+
+
 /*header{*/
 /*    grid-area: header;*/
 /*}*/
@@ -59,6 +68,7 @@ nav{
 /*Display of the content of the body*/
 section{
     grid-area: section;
+    grid-row: 2;
     padding: 20px;
 }
 
