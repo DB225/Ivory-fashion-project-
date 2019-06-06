@@ -42,7 +42,7 @@ button:hover, input[type=submit]:hover{
     grid-template-areas:
             "nav nav nav nav"
             /*". . header header"*/
-            ". section aside ."
+            "section section aside ."
             "footer footer footer footer";
 }
 
