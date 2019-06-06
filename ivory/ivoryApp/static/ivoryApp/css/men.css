@@ -3,22 +3,22 @@ img{
     height: 330px;
 }
 
-/*body{*/
-/*    margin: 1.5px 15px;*/
-/*}*/
+body{
+    margin: 1.5px 15px;
+}
 
-/*!*Style for the links*!*/
-/*a{*/
-/*    color: darkgreen;*/
-/*    list-style-type:square;*/
-/*    text-decoration: none;*/
-/*}*/
+/*Style for the links*/
+a{
+    color: darkgreen;
+    list-style-type:square;
+    text-decoration: none;
+}
 
-/*!*Hovering effect for the links*!*/
-/*a:hover{*/
-/*    text-decoration: none;*/
-/*    color: rgba(0, 187, 0, 0.83);*/
-/*}*/
+/*Hovering effect for the links*/
+a:hover{
+    text-decoration: none;
+    color: rgba(0, 187, 0, 0.83);
+}
 
 /*Style for the buttons*/
 button, input[type=submit]{
@@ -34,53 +34,51 @@ button:hover, input[type=submit]:hover{
     background: #5c041b;
 }
 
+/*Display the items*/
+.miniGrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
 
-/*.containerGrid{*/
-/*    display: grid;*/
-/*    grid-template-columns:  repeat(4, 1fr);*/
-/*    grid-gap: 15px;*/
-/*    grid-template-areas:*/
-/*            "nav nav nav nav"*/
-/*            ". . header header"*/
-/*            "section section aside aside"*/
-/*            "footer footer footer footer";*/
-/*}*/
+/*Display the whole body*/
+.containerGrid{
+    display: grid;
+    grid-template-columns:  repeat(4, 1fr);
+    grid-gap: 15px;
+    grid-template-areas:
+            "nav nav nav nav"
+            ". . header header"
+            "section aside aside aside"
+            "footer footer footer footer";
+}
 
-/*!*Display of the navBar*!*/
-/*nav{*/
-/*    grid-area: nav;*/
-/*}*/
+/*Display of the navBar*/
+nav{
+    grid-area: nav;
+}
 
-/*header{*/
-/*    grid-area: header;*/
-/*}*/
+header{
+    grid-area: header;
+}
 
-/*!*Display of the content of the body*!*/
-/*section{*/
-/*    grid-area: section;*/
-/*    padding: 20px;*/
-/*}*/
+/*Display of the content of the body*/
+section{
+    grid-area: section;
+    padding: 20px;
+}
 
-/*aside{*/
-/*    grid-area: aside;*/
-/*}*/
+aside{
+    grid-area: aside;
+}
 
 
-/*!*Display of the footer*!*/
-/*.footer{*/
-/*    grid-area: footer;*/
-/*    text-align: center;*/
-/*    height: 100px;*/
-/*    background: rgba(0, 33, 0, 0.34);*/
-/*    border-radius: 10px;*/
-/*}*/
+/*Display of the footer*/
+.footer{
+    grid-area: footer;
+    text-align: center;
+    height: 100px;
+    background: rgba(0, 33, 0, 0.34);
+    border-radius: 10px;
+}
 
-/*.distance{*/
-/*    position: relative;*/
-/*    margin-top: 3%;*/
-/*}*/
-
-/*input[type=radio]{*/
-/*    list-style-type: none;*/
-/*    display: inline;*/
-/*}*/

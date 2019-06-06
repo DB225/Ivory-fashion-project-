@@ -7,7 +7,12 @@
 <aside>
 <form method="post">
     {% csrf_token %}
-    {{ newprofile.as_p }}
+    <table>
+        <tr>
+            <td>{{ newprofile }}</td>
+        </tr>
+    </table>
+
     <button>SUBMIT</button>
 </form>
 <br>

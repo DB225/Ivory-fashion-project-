@@ -3,15 +3,23 @@
 {% block content %}
 <aside>
     <h4>My Dresses</h4>
-    <a href="{% url 'dress' %}">BACK</a>
     {% if user.is_authenticated %}
     <a href="{% url 'newdress' %}">Add Dress</a>
     {% for eachdress in personalDresses %}
-    <h5>{{ eachdress.dress_title }}</h5>
-    <img src="{{ eachdress.dress_picture.url }}" alt="image item">
-    <h5>Price : {{ eachdress.dress_price }} $</h5>
-    <a href="{% url 'editdress' eachdress.id %}">Edit</a>
-    <a href="{% url 'deletedress' eachdress.id %}">Delete</a> <br> <br>
+    <div class="card" style="width: 22.8rem;">
+        <img src="{{eachdress.dress_picture.url}}" class="card-img-top" alt="image item">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachdress.dress_title }}</h5>
+            <h5>Price : {{ eachdress.dress_price }} $</h5>
+            <a href="{% url 'editdress' eachdress.id %}" class="btn btn-outline-danger">Edit</a>
+            <a href="{% url 'deletedress' eachdress.id %}" class="btn btn-outline-danger">Delete</a>
+        </div>
+    </div>
+<!--    <h5>{{ eachdress.dress_title }}</h5>-->
+<!--    <img src="{{ eachdress.dress_picture.url }}" alt="image item">-->
+<!--    <h5>Price : {{ eachdress.dress_price }} $</h5>-->
+<!--    <a href="{% url 'editdress' eachdress.id %}" class="btn btn-outline-danger">Edit</a>-->
+<!--    <a href="{% url 'deletedress' eachdress.id %}" class="btn btn-outline-danger">Delete</a>-->
     {% endfor %}
     {% else %}
     <h1>No Dress Available</h1>

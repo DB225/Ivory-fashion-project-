@@ -5,9 +5,12 @@
     <h2>Edit Shirt</h2>
     <form method="post">
         {% csrf_token %}
-        {{ editedShirt.as_p }}
+        <table>
+            <tr>
+                <td>{{ editedShirt }}</td>
+            </tr>
+        </table>
         <button>UPDATE</button>
     </form>
 </aside>
-
 {% endblock %}

@@ -3,15 +3,25 @@
 {% block content %}
 <aside>
     <h4>My Pants</h4>
-    <a href="{% url 'pantsmen' %}">BACK</a>
     {% if user.is_authenticated %}
     <a href="{% url 'newpants' %}">Add Pant</a>
-    {% for eachpant in personalPants %}
-    <h5>{{ eachpant.pant_title }}</h5>
-    <img src="{{ eachpant.pant_picture.url }}" alt="image item">
-    <h5>Price : {{ eachpant.pant_price }} $</h5>
-    <a href="{% url 'editpants' eachpant.id %}">Edit</a>
-    <a href="{% url 'deletepants' eachpant.id %}">Delete</a> <br> <br>
+    {% for eachPant in personalPants %}
+
+    <div class="card" style="width: 22.8rem;">
+        <img src="{{eachPant.pant_picture.url}}" class="card-img-top" alt="image item">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachPant.pant_title }}</h5>
+            <h5>Price : {{ eachPant.pant_price }} $</h5>
+            <a href="{% url 'editpants' eachPant.id %}" class="btn btn-outline-danger">Edit</a>
+            <a href="{% url 'deletepants' eachPant.id %}" class="btn btn-outline-danger">Delete</a>
+        </div>
+    </div>
+<!--    -->
+<!--    <h5>{{ eachpant.pant_title }}</h5>-->
+<!--    <img src="{{ eachpant.pant_picture.url }}" alt="image item">-->
+<!--    <h5>Price : {{ eachpant.pant_price }} $</h5>-->
+<!--    <a href="{% url 'editpants' eachpant.id %}">Edit</a>-->
+<!--    <a href="{% url 'deletepants' eachpant.id %}">Delete</a>-->
     {% endfor %}
     {% else %}
     <h1>No Pant Available</h1>

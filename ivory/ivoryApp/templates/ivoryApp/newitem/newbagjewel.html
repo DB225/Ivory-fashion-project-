@@ -4,9 +4,13 @@
 <h2>New Accessory</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ new_bj.as_p }}
+    <table>
+        <tr>
+            <td>{{ new_bj }}</td>
+        </tr>
+    </table>
     <button>CREATE</button>
 </form>
 <br>
-<a href="{% url 'bagjewel' %}">BACK</a>
+<a href="{% url 'bagjewel' %}">Previous Page</a>
 {% endblock %}

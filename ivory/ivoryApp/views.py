@@ -452,11 +452,6 @@ def deleteshoeswomen(request, deleteswomen_id):
 #################################################################################
 
 
-# Cart
-def shoppingCart(request):
-    return render(request, 'ivoryApp/shoppingCart.html')
-
-
 # find informations through the search bar
 def search_ts(request):
     form = MyForm()
@@ -509,3 +504,9 @@ def search_sw(request):
     makeSearch = request.POST['mySearch']
     research_sw = ShoesWomen.objects.filter(Q(sw_title__startswith=makeSearch))
     return render(request, 'ivoryApp/search/search_sw.html', {'research_sw': research_sw, 'form': form})
+
+
+# Cart
+def shoppingCart(request):
+
+    return render(request, 'ivoryApp/shoppingCart.html')

@@ -3,17 +3,24 @@
 {% block content %}
 <aside>
     <h4>My Shirts</h4>
-    <a href="{% url 'shirtmen' %}">BACK</a>
     {% if user.is_authenticated %}
     <a href="{% url 'newshirt' %}">Add Shirt</a>
     {% for eachshirt in personalShirts %}
-    <h5>{{ eachshirt.s_title }}</h5>
-    <img src="{{ eachshirt.s_picture.url }}" alt="image item">
-    <h5>Price : {{ eachshirt.s_price }} $</h5>
-    <a href="{% url 'editshirt' eachshirt.id %}">Edit</a>
-    <a href="{% url 'deleteshirt' eachshirt.id %}">Delete</a> <br> <br>
+    <div class="card" style="width: 22.8rem;">
+        <img src="{{eachshirt.s_picture.url}}" class="card-img-top" alt="image item">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachshirt.s_title }}</h5>
+            <h5>Price : {{ eachshirt.s_price }} $</h5>
+            <a href="{% url 'editshirt' eachshirt.id %}" class="btn btn-outline-danger">Edit</a>
+            <a href="{% url 'deleteshirt' eachshirt.id %}" class="btn btn-outline-danger">Delete</a>
+        </div>
+    </div>
+<!--    <h5>{{ eachshirt.s_title }}</h5>-->
+<!--    <img src="{{ eachshirt.s_picture.url }}" alt="image item">-->
+<!--    <h5>Price : {{ eachshirt.s_price }} $</h5>-->
+<!--    <a href="{% url 'editshirt' eachshirt.id %}" class="btn btn-outline-danger">Edit</a>-->
+<!--    <a href="{% url 'deleteshirt' eachshirt.id %}" class="btn btn-outline-danger">Delete</a>-->
     {% endfor %}
-
     {% else %}
     <h1>No Shirt Available</h1>
     {% endif%}

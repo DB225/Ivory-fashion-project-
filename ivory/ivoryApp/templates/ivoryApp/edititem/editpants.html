@@ -5,7 +5,11 @@
 <aside>
     <form method="post">
         {% csrf_token %}
-        {{ editedPant.as_p }}
+        <table>
+            <tr>
+                <td>{{ editedPant }}</td>
+            </tr>
+        </table>
         <button>UPDATE</button>
     </form>
 </aside>

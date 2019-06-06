@@ -14,6 +14,7 @@
     <a href="{% url 'yourshirt' %}">My Shirts</a>
     {% endif %}
     {% if allShirts %}
+    <div class="miniGrid">
     {% for eachSh in allShirts %}
     <div class="card" style="width: 22.8rem;">
         <img src="{{eachSh.s_picture.url}}" class="card-img-top" alt="image item">
@@ -33,25 +34,8 @@
             <a href="#" class="btn btn-outline-danger">Add to cart</a>
         </div>
     </div>
-<!--    <h5>{{ eachSh.s_title }}</h5>-->
-<!--    <h5>-->
-<!--        <img src="{{eachSh.s_picture.url}}" alt="image item">-->
-<!--    </h5>-->
-
-<!--    <ul>Size :-->
-<!--        {% for choice in form.s_size.field.choices %}-->
-<!--        <li>-->
-<!--            <input type="radio" name="s_size" value="{{choice.0}}"-->
-<!--                   {% ifequal form.s_size.data choice.0 %}-->
-<!--                   checked="checked"-->
-<!--                   {% endifequal %}/>-->
-<!--            <label>{{choice.1}}</label>-->
-<!--        </li>-->
-<!--        {% endfor %}-->
-<!--    </ul>-->
-
-<!--    <h5>Price : {{ eachSh.s_price }} $</h5>-->
     {% endfor %}
+    </div>
     {% endif %}
 </aside>
 {% endblock %}

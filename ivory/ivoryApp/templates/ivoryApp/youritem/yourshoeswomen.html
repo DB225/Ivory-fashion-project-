@@ -3,15 +3,26 @@
 {% block content %}
 <aside>
     <h4>My Shoes Women</h4>
-    <a href="{% url 'shoeswomen' %}">BACK</a>
     {% if user.is_authenticated %}
     <a href="{% url 'newshoeswomen' %}">Add Shoes Women</a>
     {% for eachsw in personalShoesWomen %}
-    <h5>{{ eachsw.sw_title }}</h5>
-    <img src="{{ eachsw.sw_picture.url }}" alt="image item">
-    <h5>Price : {{ eachsw.sw_price }} $</h5>
-    <a href="{% url 'editshoeswomen' eachsw.id %}">Edit</a>
-    <a href="{% url 'deleteshoeswomen' eachsw.id %}">Delete</a> <br> <br>
+
+
+    <div class="card" style="width: 22.8rem;">
+        <img src="{{eachsw.sw_picture.url}}" class="card-img-top" alt="image item">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachsw.sw_title }}</h5>
+            <h5>Price : {{ eachsw.sw_price }} $</h5>
+            <a href="{% url 'editshoeswomen' eachsw.id %}" class="btn btn-outline-danger">Edit</a>
+            <a href="{% url 'deleteshoeswomen' eachsw.id %}" class="btn btn-outline-danger">Delete</a>
+        </div>
+    </div>
+
+<!--    <h5>{{ eachsw.sw_title }}</h5>-->
+<!--    <img src="{{ eachsw.sw_picture.url }}" alt="image item">-->
+<!--    <h5>Price : {{ eachsw.sw_price }} $</h5>-->
+<!--    <a href="{% url 'editshoeswomen' eachsw.id %}">Edit</a>-->
+<!--    <a href="{% url 'deleteshoeswomen' eachsw.id %}">Delete</a> <br> <br>-->
     {% endfor %}
     {% else %}
     <h1>No Shoes Women Available</h1>

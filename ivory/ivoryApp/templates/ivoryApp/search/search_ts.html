@@ -4,29 +4,18 @@
 <aside>
     {% if research_ts %}
     {% for eachts in research_ts %}
-    <h5>{{eachts.ts_title}}</h5>
-    <h5>
-        <img src="{{eachts.ts_picture.url}}" alt="image item">
-    </h5>
-    <ul> Size :
-        {% for choice in form.ts_size.field.choices %}
-        <li>
-            <input type="radio" name="ts_size" value="{{choice.0}}"
-                   {% ifequal form.ts_size.data choice.0 %}
-                   checked="checked"
-                   {% endifequal %}/>
-            <label>
-                {{choice.1}}
-            </label>
-        </li>
-        {% endfor %}
-    </ul>
-    <h5>Price : {{ eachts.ts_price }} $</h5>
+    <div class="card" style="width: 22.8rem;">
+        <img src="{{eachts.ts_picture.url}}" class="card-img-top" alt="image item">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachts.ts_title }}</h5>
+            <h5>Price : {{ eachts.ts_price }} $</h5>
+        </div>
+    </div>
     {% endfor %}
     {% else %}
     <h3>No such information</h3> <br>
     {% endif %}
-    <a href="{% url 'tshirtmen' %}">&#10237; BACK</a>
+    <a href="{% url 'tshirtmen' %}">&#10237; Previous Page</a>
 </aside>
 
 {% endblock %}
