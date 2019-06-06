@@ -67,6 +67,10 @@ li.nav-item.active{
 }
 
 
+div #list-tab .list-group{
+    box-sizing: content-box;
+}
+
 header{
     grid-area: header;
 }

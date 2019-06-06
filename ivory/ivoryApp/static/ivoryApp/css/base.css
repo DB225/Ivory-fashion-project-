@@ -76,13 +76,17 @@ aside{
     grid-area: aside;
 }
 
-
-
 /*Display of the footer*/
 .footer{
     grid-area: footer;
     text-align: center;
     height: 100px;
     background: rgba(0, 33, 0, 0.34);
+    border-radius: 10px;
+}
+
+.smallImage{
+    width:50%;
+    height:70%;
     border-radius: 10px;
 }
