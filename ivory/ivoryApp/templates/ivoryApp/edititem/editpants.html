@@ -2,7 +2,6 @@
 
 {% block content %}
 <h2>Edit Pants</h2>
-<aside>
     <form method="post">
         {% csrf_token %}
         <table>
@@ -12,6 +11,5 @@
         </table>
         <button>UPDATE</button>
     </form>
-</aside>
 
 {% endblock %}
