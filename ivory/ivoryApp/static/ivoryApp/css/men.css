@@ -5,6 +5,7 @@ img{
 
 body{
     margin: 1.5px 15px;
+    background-color: rgba(255, 255, 0, 0.26);
 }
 
 /*Style for the links*/
@@ -65,7 +66,7 @@ a.navbar-brand{
 }
 
 li.nav-item.active{
-    margin-left: 42%;
+    margin-left: 22%;
 }
 
 
@@ -93,7 +94,7 @@ aside{
     grid-area: footer;
     text-align: center;
     height: 100px;
-    background: rgba(92, 17, 24, 0.34);
+    background: rgba(255, 255, 0, 0.52);
     border-radius: 10px;
 }
 
@@ -110,4 +111,9 @@ div#list-tab.list-group{
 a.nav-link.one{
     color: #a71d2a;
     font-weight: bold;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
 }
