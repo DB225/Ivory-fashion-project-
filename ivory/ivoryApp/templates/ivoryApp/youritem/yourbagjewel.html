@@ -5,6 +5,7 @@
     <h4>My Accessories</h4>
     {% if user.is_authenticated %}
     <a href="{% url 'newbagjewel' %}">Add Accessory</a>
+    <div class="miniGrid">
     {% for eachbj in personalAccessories %}
     <div class="card" style="width: 22.8rem;">
         <img src="{{eachbj.bj_picture.url}}" class="card-img-top" alt="image item">
@@ -15,13 +16,8 @@
             <a href="{% url 'deletebagjewel' eachbj.id %}" class="btn btn-outline-danger">Delete</a>
         </div>
     </div>
-<!--    -->
-<!--    <h5>{{ eachbj.bj_title }}</h5>-->
-<!--    <img src="{{ eachbj.bj_picture.url }}" alt="image item">-->
-<!--    <h5>Price : {{ eachbj.bj_price }} $</h5>-->
-<!--    <a href="{% url 'editbagjewel' eachbj.id %}">Edit</a>-->
-<!--    <a href="{% url 'deletebagjewel' eachbj.id %}">Delete</a>-->
     {% endfor %}
+    </div>
     {% else %}
     <h1>No Accessory Available</h1>
     {% endif%}

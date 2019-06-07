@@ -53,13 +53,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'men' %}">MEN <span class="sr-only">(current)</span></a>
+                    <a class="nav-link one" href="{% url 'men' %}">MEN <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'women' %}">WOMEN <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'newdesigner' %}">NEW USER <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'newdesigner' %}">NEW.USER <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'login' %}">LOGIN <span class="sr-only">(current)</span></a>
@@ -74,14 +74,24 @@
 <section>
     <h4>MEN'S COLLECTION</h4>
     <div class="row">
-        <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="{% url 'tshirtmen' %}" role="tab">T-Shirt</a>
-                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="{% url 'shirtmen' %}" role="tab">Shirt</a>
-                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="{% url 'pantsmen' %}" role="tab">Pants</a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="{% url 'shoesmen' %}" role="tab">Shoes</a>
+                <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="{% url 'tshirtmen' %}" role="tab">
+                    T-Shirt
+                    <img src="../../../media/images/fashion8.jpg" class="verySmallImage" alt="tip">
+                </a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="{% url 'shirtmen' %}" role="tab">
+                    Shirt
+                    <img src="../../../media/images/fashion9.jpg" class="verySmallImage" alt="tip">
+                </a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="{% url 'pantsmen' %}" role="tab">
+                    Pants
+                    <img src="../../../media/images/fashion10.jpg" class="verySmallImage" alt="tip">
+                </a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="{% url 'shoesmen' %}" role="tab">
+                    Shoes
+                    <img src="../../../media/images/fashion11.jpeg" class="verySmallImage" alt="tip">
+                </a>
             </div>
-        </div>
     </div>
 </section>
 

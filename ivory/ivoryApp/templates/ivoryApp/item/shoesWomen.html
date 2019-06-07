@@ -32,7 +32,9 @@
                 {% endfor %}
             </h5>
             <h5>Price : {{ eachsw.sw_price }} $</h5>
+            {% if user.is_authenticated %}
             <a href="#" class="btn btn-outline-danger">Add to cart</a>
+            {% endif %}
         </div>
     </div>
     {% endfor %}

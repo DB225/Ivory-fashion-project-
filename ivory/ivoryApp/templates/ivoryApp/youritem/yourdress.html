@@ -5,6 +5,7 @@
     <h4>My Dresses</h4>
     {% if user.is_authenticated %}
     <a href="{% url 'newdress' %}">Add Dress</a>
+    <div class="miniGrid">
     {% for eachdress in personalDresses %}
     <div class="card" style="width: 22.8rem;">
         <img src="{{eachdress.dress_picture.url}}" class="card-img-top" alt="image item">
@@ -15,12 +16,8 @@
             <a href="{% url 'deletedress' eachdress.id %}" class="btn btn-outline-danger">Delete</a>
         </div>
     </div>
-<!--    <h5>{{ eachdress.dress_title }}</h5>-->
-<!--    <img src="{{ eachdress.dress_picture.url }}" alt="image item">-->
-<!--    <h5>Price : {{ eachdress.dress_price }} $</h5>-->
-<!--    <a href="{% url 'editdress' eachdress.id %}" class="btn btn-outline-danger">Edit</a>-->
-<!--    <a href="{% url 'deletedress' eachdress.id %}" class="btn btn-outline-danger">Delete</a>-->
     {% endfor %}
+    </div>
     {% else %}
     <h1>No Dress Available</h1>
     {% endif%}

@@ -15,11 +15,6 @@
             <a href="{% url 'deleteshirt' eachshirt.id %}" class="btn btn-outline-danger">Delete</a>
         </div>
     </div>
-<!--    <h5>{{ eachshirt.s_title }}</h5>-->
-<!--    <img src="{{ eachshirt.s_picture.url }}" alt="image item">-->
-<!--    <h5>Price : {{ eachshirt.s_price }} $</h5>-->
-<!--    <a href="{% url 'editshirt' eachshirt.id %}" class="btn btn-outline-danger">Edit</a>-->
-<!--    <a href="{% url 'deleteshirt' eachshirt.id %}" class="btn btn-outline-danger">Delete</a>-->
     {% endfor %}
     {% else %}
     <h1>No Shirt Available</h1>

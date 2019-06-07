@@ -55,6 +55,7 @@ button:hover, input[type=submit]:hover{
 nav{
     grid-area: nav;
     height:100px;
+    border-radius: 10%;
 }
 
 a.navbar-brand{
@@ -89,3 +90,17 @@ aside{
     border-radius: 10px;
 }
 
+.verySmallImage{
+    width:23%;
+    height:1%;
+    border-radius: 40px;
+}
+
+div#list-tab.list-group{
+    text-align: center;
+}
+
+a.nav-link.one{
+    color: #a71d2a;
+    font-weight: bold;
+}

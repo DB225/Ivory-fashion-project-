@@ -5,6 +5,7 @@
     <h4>My T-Shirts</h4>
     {% if user.is_authenticated %}
     <a href="{% url 'newtshirt' %}">Add T-Shirt</a>
+    <div class="miniGrid">
     {% for eachTsh in personalTshirts %}
     <div class="card" style="width: 22.8rem;">
         <img src="{{eachTsh.ts_picture.url}}" class="card-img-top" alt="image item">
@@ -15,15 +16,8 @@
             <a href="{% url 'deletetshirt' eachTsh.id %}" class="btn btn-outline-danger">Delete</a>
         </div>
     </div>
-<!--    -->
-<!--    -->
-<!--    <h5>{{ eachTsh.ts_title }}</h5>-->
-<!--    <img src="{{ eachTsh.ts_picture.url }}" alt="image item">-->
-<!--    </a>-->
-<!--    <h5>Price: {{ eachTsh.ts_price }} $</h5>-->
-<!--    <a href="{% url 'edittshirt' eachTsh.id %}">Edit</a>-->
-<!--    <a href="{% url 'deletetshirt' eachTsh.id %}">Delete</a>-->
     {% endfor %}
+    </div>
     {% else %}
     <h1>No T-Shirt Available</h1>
     {% endif%}

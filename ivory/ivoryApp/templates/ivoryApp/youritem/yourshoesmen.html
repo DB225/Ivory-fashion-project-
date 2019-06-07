@@ -5,6 +5,7 @@
     <h4>My Shoes Men</h4>
     {% if user.is_authenticated %}
     <a href="{% url 'newshoesmen' %}">Add Shoes</a>
+    <div class="miniGrid">
     {% for eachsm in personalShoesMen %}
     <div class="card" style="width: 22.8rem;">
         <img src="{{eachsm.sm_picture.url}}" class="card-img-top" alt="image item">
@@ -26,12 +27,8 @@
             <a href="{% url 'deleteshoesmen' eachsm.id %}" class="btn btn-outline-danger">Delete</a>
         </div>
     </div>
-<!--    <h5>{{ eachsm.sm_title }}</h5>-->
-<!--    <img src="{{ eachsm.sm_picture.url }}" alt="image item">-->
-<!--    <h5>Price : {{ eachsm.sm_price }} $</h5>-->
-<!--    <a href="{% url 'editshoesmen' eachsm.id %}">Edit</a>-->
-<!--    <a href="{% url 'deleteshoesmen' eachsm.id %}">Delete</a>-->
     {% endfor %}
+    </div>
     {% else %}
     <h1>No Shoes men Available</h1>
     {% endif%}

@@ -56,10 +56,10 @@
                     <a class="nav-link" href="{% url 'men' %}">MEN <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'women' %}">WOMEN <span class="sr-only">(current)</span></a>
+                    <a class="nav-link one" href="{% url 'women' %}">WOMEN <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'newdesigner' %}">NEW USER<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'newdesigner' %}">NEW.USER<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'login' %}">LOGIN <span class="sr-only">(current)</span></a>
@@ -75,9 +75,18 @@
     <div class="row">
         <div >
             <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="{% url 'dress' %}" role="tab">Dress</a>
-                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="{% url 'bagjewel' %}" role="tab">Accessories</a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="{% url 'shoeswomen' %}" role="tab">Shoes</a>
+                <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="{% url 'dress' %}" role="tab">
+                    Dress
+                    <img src="../../../media/images/fashion12.jpg" class="verySmallImage" alt="tip">
+                </a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="{% url 'bagjewel' %}" role="tab">
+                    Accessories
+                    <img src="../../../media/images/fashion13.jpg" class="verySmallImage" alt="tip">
+                </a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="{% url 'shoeswomen' %}" role="tab">
+                    Shoes
+                    <img src="../../../media/images/fashion14.png" class="verySmallImage" alt="tip">
+                </a>
             </div>
         </div>
     </div>
