@@ -5,6 +5,7 @@
     <h4>My Shirts</h4>
     {% if user.is_authenticated %}
     <a href="{% url 'newshirt' %}">Add Shirt</a>
+    <div class="miniGrid">
     {% for eachshirt in personalShirts %}
     <div class="card" style="width: 22.8rem;">
         <img src="{{eachshirt.s_picture.url}}" class="card-img-top" alt="image item">
@@ -16,6 +17,7 @@
         </div>
     </div>
     {% endfor %}
+    </div>
     {% else %}
     <h1>No Shirt Available</h1>
     {% endif%}

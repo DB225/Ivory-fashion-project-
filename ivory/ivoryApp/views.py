@@ -100,9 +100,8 @@ def newshirt(request):
     if request.method == 'POST' or new_shirt.is_valid():
         new_shirt = ShirtForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        Shirt.objects.create(s_title=request.POST["s_title"], s_size=request.POST["s_size"],
-                             s_picture=request.FILES["s_picture"], s_price=request.POST["s_price"],
-                             s_ForeignKey=loggedInUser)
+        Shirt.objects.create(s_title=request.POST["s_title"], s_picture=request.FILES["s_picture"],
+                             s_price=request.POST["s_price"], s_ForeignKey=loggedInUser)
 
         return redirect('shirtmen')
     else:
@@ -160,9 +159,8 @@ def newpants(request):
     if request.method == 'POST' or new_pant.is_valid():
         new_pant = PantsForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        Pants.objects.create(pant_title=request.POST["pant_title"], pant_size=request.POST["pant_size"],
-                             pant_picture=request.FILES["pant_picture"], pant_price=request.POST["pant_price"],
-                             pant_ForeignKey=loggedInUser)
+        Pants.objects.create(pant_title=request.POST["pant_title"], pant_picture=request.FILES["pant_picture"],
+                             pant_price=request.POST["pant_price"], pant_ForeignKey=loggedInUser)
 
         return redirect('pantsmen')
     else:
@@ -220,9 +218,8 @@ def newshoesmen(request):
     if request.method == 'POST' or new_sm.is_valid():
         new_sm = ShoesMenForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        ShoesMen.objects.create(sm_title=request.POST["sm_title"], sm_size=request.POST["sm_size"],
-                                sm_picture=request.FILES["sm_picture"], sm_price=request.POST["sm_price"],
-                                sm_ForeignKey=loggedInUser)
+        ShoesMen.objects.create(sm_title=request.POST["sm_title"], sm_picture=request.FILES["sm_picture"],
+                                sm_price=request.POST["sm_price"], sm_ForeignKey=loggedInUser)
 
         return redirect('shoesmen')
     else:
@@ -287,9 +284,8 @@ def newdress(request):
     if request.method == 'POST' or new_dress.is_valid():
         new_dress = DressForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        Dress.objects.create(dress_title=request.POST["dress_title"], dress_size=request.POST["dress_size"],
-                             dress_picture=request.FILES["dress_picture"], dress_price=request.POST["dress_price"],
-                             dress_ForeignKey=loggedInUser)
+        Dress.objects.create(dress_title=request.POST["dress_title"], dress_picture=request.FILES["dress_picture"],
+                             dress_price=request.POST["dress_price"], dress_ForeignKey=loggedInUser)
 
         return redirect('dress')
     else:
@@ -347,9 +343,8 @@ def newbagjewel(request):
     if request.method == 'POST' or new_bj.is_valid():
         new_bj = BagJewelForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        BagJewel.objects.create(bj_title=request.POST["bj_title"], bj_size=request.POST["bj_size"],
-                                bj_picture=request.FILES["bj_picture"], bj_price=request.POST["bj_price"],
-                                bj_ForeignKey=loggedInUser)
+        BagJewel.objects.create(bj_title=request.POST["bj_title"], bj_picture=request.FILES["bj_picture"],
+                                bj_price=request.POST["bj_price"], bj_ForeignKey=loggedInUser)
 
         return redirect('bagjewel')
     else:
@@ -407,9 +402,8 @@ def newshoeswomen(request):
     if request.method == 'POST' or new_sw.is_valid():
         new_sw = ShoesWomenForm(request.POST, request.FILES)
         loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
-        ShoesWomen.objects.create(sw_title=request.POST["sw_title"], sw_size=request.POST["sw_size"],
-                                  sw_picture=request.FILES["sw_picture"], sw_price=request.POST["sw_price"],
-                                  sw_ForeignKey=loggedInUser)
+        ShoesWomen.objects.create(sw_title=request.POST["sw_title"], sw_picture=request.FILES["sw_picture"],
+                                  sw_price=request.POST["sw_price"], sw_ForeignKey=loggedInUser)
 
         return redirect('shoeswomen')
     else:
