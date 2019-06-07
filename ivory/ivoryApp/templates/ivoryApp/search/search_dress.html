@@ -1,8 +1,8 @@
-{% extends 'ivoryApp/base.html' %}
+{% extends 'ivoryApp/women.html' %}
 
 {% block content %}
 <aside>
-    {{% if research_dress %}
+    {% if research_dress %}
     <div class="miniGrid">
     {% for eachdress in research_dress %}
     <div class="card" style="width: 22.8rem;">
