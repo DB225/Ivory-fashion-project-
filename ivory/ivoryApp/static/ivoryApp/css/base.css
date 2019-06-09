@@ -38,12 +38,12 @@ button:hover, input[type=submit]:hover{
 
 .containerGrid{
     display: grid;
-    grid-template-columns:  repeat(6, 1fr);
+    grid-template-columns:  repeat(8, 1fr);
     grid-gap: 15px;
     grid-template-areas:
-            "nav nav nav nav nav nav"
-            ". section section aside aside ."
-            "footer footer footer footer footer footer";
+            "nav nav nav nav nav nav nav nav"
+            ". section section section section aside aside aside"
+            "footer footer footer footer footer footer footer footer";
 }
 
 /*Display of the navBar*/
@@ -83,8 +83,8 @@ aside{
 }
 
 .smallImage{
-    width:27%;
-    height:31%;
+    width:20%;
+    height:27%;
     border-radius: 90px;
     margin-right: 20px;
 }
@@ -92,4 +92,9 @@ aside{
 .icon{
     width: 32px;
     height: 32px;
+}
+
+.icon2{
+    width: 45px;
+    height: 40px;
 }
