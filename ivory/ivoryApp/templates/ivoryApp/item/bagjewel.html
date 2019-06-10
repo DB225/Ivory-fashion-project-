@@ -21,6 +21,10 @@
         <img src="{{eachBj.bj_picture.url}}" class="card-img-top" alt="image item">
         <div class="card-body">
             <h5 class="card-title">{{ eachBj.bj_title }}</h5>
+            <h6>
+                By <i>{{ eachBj.bj_ForeignKey}}</i> <br>
+
+            </h6>
             <h5>
                 Size :
                 {% for choice in form.bj_size.field.choices %}

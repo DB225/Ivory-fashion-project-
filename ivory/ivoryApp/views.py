@@ -27,9 +27,15 @@ def men(request):
 
 # T-Shirt
 def tshirtmen(request):
+    out_of_smalls = Tshirt.objects.filter(ts_size='S').count() == 5
     form = MyForm()
     allTshirts = Tshirt.objects.all()
-    return render(request, 'ivoryApp/item/tShirtMen.html', {'allTshirts': allTshirts, 'form': form})
+    context = {
+        'allTshirts': allTshirts,
+        'form': form,
+        'out_of_smalls': out_of_smalls
+    }
+    return render(request, 'ivoryApp/item/tShirtMen.html', context)
 
 
 # new T-Shirt

@@ -20,6 +20,10 @@
         <img src="{{eachSh.s_picture.url}}" class="card-img-top" alt="image item">
         <div class="card-body">
             <h5 class="card-title">{{ eachSh.s_title }}</h5>
+            <h6>
+                By <i>{{ eachSh.s_ForeignKey}}</i> <br>
+
+            </h6>
             <h5>
                 Size :
                     {% for choice in form.s_size.field.choices %}

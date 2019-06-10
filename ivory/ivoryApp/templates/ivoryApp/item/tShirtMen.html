@@ -21,6 +21,10 @@
         <img src="{{eachTsh.ts_picture.url}}" class="card-img-top" alt="image item">
         <div class="card-body">
             <h5 class="card-title">{{ eachTsh.ts_title }}</h5>
+            <h6>
+                By <i>{{ eachTsh.ts_ForeignKey}}</i> <br>
+
+            </h6>
             <h5>
                 Size :
                 {% for choice in form.ts_size.field.choices %}

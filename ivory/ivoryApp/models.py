@@ -18,7 +18,7 @@ class UserLoginModel(models.Model):
 class Tshirt(models.Model):
     ts_title = models.CharField(max_length=200)
     ts_picture = models.ImageField(upload_to="media/images/", null=True, blank=True)
-    # ts_size = models.CharField(max_length=20)
+    ts_size = models.CharField(max_length=20)
     ts_price = models.IntegerField(default=0)
     ts_ForeignKey = models.ForeignKey(UserLoginModel, on_delete=models.SET_NULL, null=True, blank=True)
 

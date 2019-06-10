@@ -21,6 +21,10 @@
         <img src="{{eachPant.pant_picture.url}}" class="card-img-top" alt="image item">
         <div class="card-body">
             <h5 class="card-title">{{ eachPant.pant_title }}</h5>
+            <h6>
+                By <i>{{ eachPant.pant_ForeignKey}}</i> <br>
+
+            </h6>
             <h5>
                 Size :
                 {% for choice in form.pant_size.field.choices %}
