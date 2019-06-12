@@ -25,7 +25,7 @@ SECRET_KEY = '7kmfihv!o(*y4*!qm(82=3!lul9%knu^+))96)4+-rm^c+hw7o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.1.1.0', 'app2.didierbonga.com', '134.209.166.56']
 
 
 # Application definition
@@ -121,6 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
