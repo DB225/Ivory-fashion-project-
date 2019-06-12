@@ -27,13 +27,13 @@ def men(request):
 
 # T-Shirt
 def tshirtmen(request):
-    out_of_smalls = Tshirt.objects.filter(ts_size='S').count() == 5
+    # out_of_smalls = Tshirt.objects.filter(ts_size='S').count() == 5
     form = MyForm()
     allTshirts = Tshirt.objects.all()
     context = {
         'allTshirts': allTshirts,
         'form': form,
-        'out_of_smalls': out_of_smalls
+        # 'out_of_smalls': out_of_smalls
     }
     return render(request, 'ivoryApp/item/tShirtMen.html', context)
 
@@ -508,5 +508,12 @@ def search_sw(request):
 
 # Cart
 def shoppingCart(request):
-
+    # loggedInUser = get_object_or_404(UserLoginModel, username=request.user)
+    # tshirts = get_object_or_404(Tshirt, pk=item_id)
+    # pants = get_object_or_404(Shirt, pk=item_id)
+    # shirts = get_object_or_404(Pants, pk=item_id)
+    # shoes_men = get_object_or_404(ShoesMen, pk=item_id)
+    # dresses = get_object_or_404(Dress, pk=item_id)
+    # accessories = get_object_or_404(BagJewel, pk=item_id)
+    # shoes_women = get_object_or_404(ShoesWomen, pk=item_id)
     return render(request, 'ivoryApp/shoppingCart.html')

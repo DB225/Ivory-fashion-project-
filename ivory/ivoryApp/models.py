@@ -98,3 +98,75 @@ class ShoesWomen(models.Model):
 
     def __str__(self):
         return self.sw_title
+
+
+# # Ordered Items
+#
+# class OrderTshirt(models.Model):
+#     ts = models.OneToOneField(Tshirt, on_delete=models.SET_NULL, null=True)
+#     is_ordered = models.BooleanField(default=False)
+#     date_added = models.DateTimeField(auto_now=True)
+#     date_ordered = models.DateTimeField(null=True)
+#
+#     def __str__(self):
+#         return self.ts.ts_title
+#
+#
+# class OrderShirt(models.Model):
+#     s = models.OneToOneField(Shirt, on_delete=models.SET_NULL, null=True)
+#     is_ordered = models.BooleanField(default=False)
+#     date_added = models.DateTimeField(auto_now=True)
+#     date_ordered = models.DateTimeField(null=True)
+#
+#     def __str__(self):
+#         return self.s.s_title
+#
+#
+# class OrderPant(models.Model):
+#     pant = models.OneToOneField(Tshirt, on_delete=models.SET_NULL, null=True)
+#     is_ordered = models.BooleanField(default=False)
+#     date_added = models.DateTimeField(auto_now=True)
+#     date_ordered = models.DateTimeField(null=True)
+#
+#     def __str__(self):
+#         return self.pant.pant_title
+#
+#
+# class OrderShoesmen(models.Model):
+#     sm = models.OneToOneField(Tshirt, on_delete=models.SET_NULL, null=True)
+#     is_ordered = models.BooleanField(default=False)
+#     date_added = models.DateTimeField(auto_now=True)
+#     date_ordered = models.DateTimeField(null=True)
+#
+#     def __str__(self):
+#         return self.sm.sm_title
+#
+#
+# class OrderDress(models.Model):
+#     dress = models.OneToOneField(Tshirt, on_delete=models.SET_NULL, null=True)
+#     is_ordered = models.BooleanField(default=False)
+#     date_added = models.DateTimeField(auto_now=True)
+#     date_ordered = models.DateTimeField(null=True)
+#
+#     def __str__(self):
+#         return self.dress.dress_title
+#
+#
+# class OrderAccessories(models.Model):
+#     acc = models.OneToOneField(Tshirt, on_delete=models.SET_NULL, null=True)
+#     is_ordered = models.BooleanField(default=False)
+#     date_added = models.DateTimeField(auto_now=True)
+#     date_ordered = models.DateTimeField(null=True)
+#
+#     def __str__(self):
+#         return self.acc.bj_title
+#
+#
+# class OrderShoeswomen(models.Model):
+#     sw = models.OneToOneField(Tshirt, on_delete=models.SET_NULL, null=True)
+#     is_ordered = models.BooleanField(default=False)
+#     date_added = models.DateTimeField(auto_now=True)
+#     date_ordered = models.DateTimeField(null=True)
+#
+#     def __str__(self):
+#         return self.sw.sw_title
