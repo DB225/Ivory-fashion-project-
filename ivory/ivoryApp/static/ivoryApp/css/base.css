@@ -42,8 +42,7 @@ button:hover, input[type=submit]:hover{
     grid-gap: 15px;
     grid-template-areas:
             "nav nav nav nav nav nav nav nav"
-            ". section section section section aside aside aside"
-            "footer footer footer footer footer footer footer footer";
+            ". section section section section aside aside .";
 }
 
 /*Display of the navBar*/
@@ -66,25 +65,18 @@ li.nav-item.active{
 section{
     grid-area: section;
     grid-row: 2;
-    padding: 20px;
+    padding: 15px;
 }
 
 aside{
     grid-area: aside;
+    /*text-align: center;*/
 }
 
-/*Display of the footer*/
-.footer{
-    grid-area: footer;
-    text-align: center;
-    height: 100px;
-    background: rgba(255, 255, 0, 0.52);
-    border-radius: 10%;
-}
 
 .smallImage{
-    width:20%;
-    height:27%;
+    width:23%;
+    height:24%;
     border-radius: 90px;
     margin-right: 20px;
 }

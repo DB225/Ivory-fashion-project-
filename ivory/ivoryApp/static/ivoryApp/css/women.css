@@ -82,15 +82,6 @@ aside{
 }
 
 
-/*Display of the footer*/
-.footer{
-    grid-area: footer;
-    text-align: center;
-    height: 100px;
-    background: rgba(255, 255, 0, 0.52);
-    border-radius: 10%;
-}
-
 .verySmallImage{
     width:23%;
     height:1%;
