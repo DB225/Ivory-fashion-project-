@@ -25,7 +25,7 @@ SECRET_KEY = '7kmfihv!o(*y4*!qm(82=3!lul9%knu^+))96)4+-rm^c+hw7o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.1.1.0', 'app2.didierbonga.com', '134.209.166.56']
+ALLOWED_HOSTS = ['127.0.0.1', 'app2.didierbonga.com', '134.209.166.56']
 
 
 # Application definition
