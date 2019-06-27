@@ -9,12 +9,20 @@ CUSTOMER_SIZE = (
     ("xxl", "XXL"),
 )
 
-CUSTOMER_SIZE_SHOES = (
+CUSTOMER_SIZE_SHOES_MEN = (
     ("9", "9"),
     ("10", "10"),
     ("11", "11"),
     ("12", "12"),
     ("13", "13"),
+)
+
+CUSTOMER_SIZE_SHOES_WOMEN = (
+    ("7", "7"),
+    ("8", "8"),
+    ("9", "9"),
+    ("10", "10"),
+    ("11", "11"),
 )
 
 
@@ -119,7 +127,7 @@ class MyForm(forms.Form):
     ts_size = forms.ChoiceField(choices=CUSTOMER_SIZE)
     s_size = forms.ChoiceField(choices=CUSTOMER_SIZE)
     pant_size = forms.ChoiceField(choices=CUSTOMER_SIZE)
-    sm_size = forms.ChoiceField(choices=CUSTOMER_SIZE_SHOES)
+    sm_size = forms.ChoiceField(choices=CUSTOMER_SIZE_SHOES_MEN)
     dress_size = forms.ChoiceField(choices=CUSTOMER_SIZE)
     bj_size = forms.ChoiceField(choices=CUSTOMER_SIZE_ACCESSORY)
-    sw_size = forms.ChoiceField(choices=CUSTOMER_SIZE_SHOES)
+    sw_size = forms.ChoiceField(choices=CUSTOMER_SIZE_SHOES_WOMEN)
